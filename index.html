@@ -19,8 +19,21 @@
     .producto h3 { font-family: 'Playfair Display', serif; color: #FFD700; margin: 10px 0 5px; }
     .producto p { margin: 5px 0; font-size: 0.95rem; }
     .producto input { margin-top: 10px; }
-    .btn-enviar { display: block; margin: 30px auto; padding: 15px 30px; font-size: 1.1rem;
-                  background-color: #25D366; border: none; color: white; border-radius: 10px; cursor: pointer; }
+
+    .btn-enviar {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      padding: 15px 25px;
+      font-size: 1rem;
+      background-color: #25D366;
+      color: white;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      z-index: 1000;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    }
 
     /* Modal para imagen ampliada */
     .modal {
@@ -2135,7 +2148,7 @@
   <img id="imagenModal" src="">
 </div>
 
-<button class="btn-enviar" onclick="enviarWhatsApp()">Enviar selección por WhatsApp</button>
+<button class="btn-enviar" onclick="enviarWhatsApp()">Enviar por WhatsApp</button>
 
 <script>
   function enviarWhatsApp() {
