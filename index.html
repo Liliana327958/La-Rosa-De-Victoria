@@ -3,7 +3,7 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>La Rosa de Victoria - Catálogo Completo</title>
+  <title>La Rosa de Victoria - Catálogo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Poppins:wght@300;400&display=swap');
@@ -15,12 +15,29 @@
     .catalogo { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; padding: 30px; }
     .producto { background-color: #1a1a1a; border-radius: 12px; padding: 15px; text-align: center;
                 box-shadow: 0 0 10px rgba(255, 255, 255, 0.05); }
-    .producto img { width: 100%; height: 200px; object-fit: cover; border-radius: 10px; }
+    .producto img { width: 100%; height: 200px; object-fit: cover; border-radius: 10px; cursor: pointer; }
     .producto h3 { font-family: 'Playfair Display', serif; color: #FFD700; margin: 10px 0 5px; }
     .producto p { margin: 5px 0; font-size: 0.95rem; }
     .producto input { margin-top: 10px; }
     .btn-enviar { display: block; margin: 30px auto; padding: 15px 30px; font-size: 1.1rem;
                   background-color: #25D366; border: none; color: white; border-radius: 10px; cursor: pointer; }
+
+    /* Modal */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      left: 0; top: 0; width: 100%; height: 100%;
+      background-color: rgba(0,0,0,0.85);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal img {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 10px;
+    }
   </style>
 </head>
 <body>
@@ -34,2086 +51,2092 @@
 <main class="catalogo">
 
     <div class="producto">
-      <img src="ramo_000.jpeg" alt="Ramo 000">
+      <img src="ramo_000.jpeg" alt="Ramo 000" onclick="ampliarImagen(this.src)">
       <h3>Ramo 000</h3>
-      <p>Precio: $460000</p>
-      <input type="checkbox" value="Ramo 000|460000|ramo_000.jpeg"> Seleccionar
+      <p>Precio: $ 4.600</p>
+      <input type="checkbox" value="Ramo 000|$ 4.600|ramo_000.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_001.jpeg" alt="Ramo 001">
+      <img src="ramo_001.jpeg" alt="Ramo 001" onclick="ampliarImagen(this.src)">
       <h3>Ramo 001</h3>
-      <p>Precio: $459000</p>
-      <input type="checkbox" value="Ramo 001|459000|ramo_001.jpeg"> Seleccionar
+      <p>Precio: $ 4.590</p>
+      <input type="checkbox" value="Ramo 001|$ 4.590|ramo_001.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_002.jpeg" alt="Ramo 002">
+      <img src="ramo_002.jpeg" alt="Ramo 002" onclick="ampliarImagen(this.src)">
       <h3>Ramo 002</h3>
-      <p>Precio: $458000</p>
-      <input type="checkbox" value="Ramo 002|458000|ramo_002.jpeg"> Seleccionar
+      <p>Precio: $ 4.580</p>
+      <input type="checkbox" value="Ramo 002|$ 4.580|ramo_002.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_003.jpeg" alt="Ramo 003">
+      <img src="ramo_003.jpeg" alt="Ramo 003" onclick="ampliarImagen(this.src)">
       <h3>Ramo 003</h3>
-      <p>Precio: $457000</p>
-      <input type="checkbox" value="Ramo 003|457000|ramo_003.jpeg"> Seleccionar
+      <p>Precio: $ 4.570</p>
+      <input type="checkbox" value="Ramo 003|$ 4.570|ramo_003.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_004.jpeg" alt="Ramo 004">
+      <img src="ramo_004.jpeg" alt="Ramo 004" onclick="ampliarImagen(this.src)">
       <h3>Ramo 004</h3>
-      <p>Precio: $456000</p>
-      <input type="checkbox" value="Ramo 004|456000|ramo_004.jpeg"> Seleccionar
+      <p>Precio: $ 4.560</p>
+      <input type="checkbox" value="Ramo 004|$ 4.560|ramo_004.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_005.jpeg" alt="Ramo 005">
+      <img src="ramo_005.jpeg" alt="Ramo 005" onclick="ampliarImagen(this.src)">
       <h3>Ramo 005</h3>
-      <p>Precio: $455000</p>
-      <input type="checkbox" value="Ramo 005|455000|ramo_005.jpeg"> Seleccionar
+      <p>Precio: $ 4.550</p>
+      <input type="checkbox" value="Ramo 005|$ 4.550|ramo_005.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_006.jpeg" alt="Ramo 006">
+      <img src="ramo_006.jpeg" alt="Ramo 006" onclick="ampliarImagen(this.src)">
       <h3>Ramo 006</h3>
-      <p>Precio: $454000</p>
-      <input type="checkbox" value="Ramo 006|454000|ramo_006.jpeg"> Seleccionar
+      <p>Precio: $ 4.540</p>
+      <input type="checkbox" value="Ramo 006|$ 4.540|ramo_006.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_007.jpeg" alt="Ramo 007">
+      <img src="ramo_007.jpeg" alt="Ramo 007" onclick="ampliarImagen(this.src)">
       <h3>Ramo 007</h3>
-      <p>Precio: $453000</p>
-      <input type="checkbox" value="Ramo 007|453000|ramo_007.jpeg"> Seleccionar
+      <p>Precio: $ 4.530</p>
+      <input type="checkbox" value="Ramo 007|$ 4.530|ramo_007.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_008.jpeg" alt="Ramo 008">
+      <img src="ramo_008.jpeg" alt="Ramo 008" onclick="ampliarImagen(this.src)">
       <h3>Ramo 008</h3>
-      <p>Precio: $452000</p>
-      <input type="checkbox" value="Ramo 008|452000|ramo_008.jpeg"> Seleccionar
+      <p>Precio: $ 4.520</p>
+      <input type="checkbox" value="Ramo 008|$ 4.520|ramo_008.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_009.jpeg" alt="Ramo 009">
+      <img src="ramo_009.jpeg" alt="Ramo 009" onclick="ampliarImagen(this.src)">
       <h3>Ramo 009</h3>
-      <p>Precio: $451000</p>
-      <input type="checkbox" value="Ramo 009|451000|ramo_009.jpeg"> Seleccionar
+      <p>Precio: $ 4.510</p>
+      <input type="checkbox" value="Ramo 009|$ 4.510|ramo_009.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_010.jpeg" alt="Ramo 010">
+      <img src="ramo_010.jpeg" alt="Ramo 010" onclick="ampliarImagen(this.src)">
       <h3>Ramo 010</h3>
-      <p>Precio: $450000</p>
-      <input type="checkbox" value="Ramo 010|450000|ramo_010.jpeg"> Seleccionar
+      <p>Precio: $ 4.500</p>
+      <input type="checkbox" value="Ramo 010|$ 4.500|ramo_010.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_011.jpeg" alt="Ramo 011">
+      <img src="ramo_011.jpeg" alt="Ramo 011" onclick="ampliarImagen(this.src)">
       <h3>Ramo 011</h3>
-      <p>Precio: $449000</p>
-      <input type="checkbox" value="Ramo 011|449000|ramo_011.jpeg"> Seleccionar
+      <p>Precio: $ 4.490</p>
+      <input type="checkbox" value="Ramo 011|$ 4.490|ramo_011.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_012.jpeg" alt="Ramo 012">
+      <img src="ramo_012.jpeg" alt="Ramo 012" onclick="ampliarImagen(this.src)">
       <h3>Ramo 012</h3>
-      <p>Precio: $448000</p>
-      <input type="checkbox" value="Ramo 012|448000|ramo_012.jpeg"> Seleccionar
+      <p>Precio: $ 4.480</p>
+      <input type="checkbox" value="Ramo 012|$ 4.480|ramo_012.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_013.jpeg" alt="Ramo 013">
+      <img src="ramo_013.jpeg" alt="Ramo 013" onclick="ampliarImagen(this.src)">
       <h3>Ramo 013</h3>
-      <p>Precio: $447000</p>
-      <input type="checkbox" value="Ramo 013|447000|ramo_013.jpeg"> Seleccionar
+      <p>Precio: $ 4.470</p>
+      <input type="checkbox" value="Ramo 013|$ 4.470|ramo_013.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_014.jpeg" alt="Ramo 014">
+      <img src="ramo_014.jpeg" alt="Ramo 014" onclick="ampliarImagen(this.src)">
       <h3>Ramo 014</h3>
-      <p>Precio: $446000</p>
-      <input type="checkbox" value="Ramo 014|446000|ramo_014.jpeg"> Seleccionar
+      <p>Precio: $ 4.460</p>
+      <input type="checkbox" value="Ramo 014|$ 4.460|ramo_014.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_015.jpeg" alt="Ramo 015">
+      <img src="ramo_015.jpeg" alt="Ramo 015" onclick="ampliarImagen(this.src)">
       <h3>Ramo 015</h3>
-      <p>Precio: $445000</p>
-      <input type="checkbox" value="Ramo 015|445000|ramo_015.jpeg"> Seleccionar
+      <p>Precio: $ 4.450</p>
+      <input type="checkbox" value="Ramo 015|$ 4.450|ramo_015.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_016.jpeg" alt="Ramo 016">
+      <img src="ramo_016.jpeg" alt="Ramo 016" onclick="ampliarImagen(this.src)">
       <h3>Ramo 016</h3>
-      <p>Precio: $444000</p>
-      <input type="checkbox" value="Ramo 016|444000|ramo_016.jpeg"> Seleccionar
+      <p>Precio: $ 4.440</p>
+      <input type="checkbox" value="Ramo 016|$ 4.440|ramo_016.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_017.jpeg" alt="Ramo 017">
+      <img src="ramo_017.jpeg" alt="Ramo 017" onclick="ampliarImagen(this.src)">
       <h3>Ramo 017</h3>
-      <p>Precio: $443000</p>
-      <input type="checkbox" value="Ramo 017|443000|ramo_017.jpeg"> Seleccionar
+      <p>Precio: $ 4.430</p>
+      <input type="checkbox" value="Ramo 017|$ 4.430|ramo_017.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_018.jpeg" alt="Ramo 018">
+      <img src="ramo_018.jpeg" alt="Ramo 018" onclick="ampliarImagen(this.src)">
       <h3>Ramo 018</h3>
-      <p>Precio: $442000</p>
-      <input type="checkbox" value="Ramo 018|442000|ramo_018.jpeg"> Seleccionar
+      <p>Precio: $ 4.420</p>
+      <input type="checkbox" value="Ramo 018|$ 4.420|ramo_018.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_019.jpeg" alt="Ramo 019">
+      <img src="ramo_019.jpeg" alt="Ramo 019" onclick="ampliarImagen(this.src)">
       <h3>Ramo 019</h3>
-      <p>Precio: $441000</p>
-      <input type="checkbox" value="Ramo 019|441000|ramo_019.jpeg"> Seleccionar
+      <p>Precio: $ 4.410</p>
+      <input type="checkbox" value="Ramo 019|$ 4.410|ramo_019.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_020.jpeg" alt="Ramo 020">
+      <img src="ramo_020.jpeg" alt="Ramo 020" onclick="ampliarImagen(this.src)">
       <h3>Ramo 020</h3>
-      <p>Precio: $440000</p>
-      <input type="checkbox" value="Ramo 020|440000|ramo_020.jpeg"> Seleccionar
+      <p>Precio: $ 4.400</p>
+      <input type="checkbox" value="Ramo 020|$ 4.400|ramo_020.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_021.jpeg" alt="Ramo 021">
+      <img src="ramo_021.jpeg" alt="Ramo 021" onclick="ampliarImagen(this.src)">
       <h3>Ramo 021</h3>
-      <p>Precio: $439000</p>
-      <input type="checkbox" value="Ramo 021|439000|ramo_021.jpeg"> Seleccionar
+      <p>Precio: $ 4.390</p>
+      <input type="checkbox" value="Ramo 021|$ 4.390|ramo_021.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_022.jpeg" alt="Ramo 022">
+      <img src="ramo_022.jpeg" alt="Ramo 022" onclick="ampliarImagen(this.src)">
       <h3>Ramo 022</h3>
-      <p>Precio: $438000</p>
-      <input type="checkbox" value="Ramo 022|438000|ramo_022.jpeg"> Seleccionar
+      <p>Precio: $ 4.380</p>
+      <input type="checkbox" value="Ramo 022|$ 4.380|ramo_022.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_023.jpeg" alt="Ramo 023">
+      <img src="ramo_023.jpeg" alt="Ramo 023" onclick="ampliarImagen(this.src)">
       <h3>Ramo 023</h3>
-      <p>Precio: $437000</p>
-      <input type="checkbox" value="Ramo 023|437000|ramo_023.jpeg"> Seleccionar
+      <p>Precio: $ 4.370</p>
+      <input type="checkbox" value="Ramo 023|$ 4.370|ramo_023.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_024.jpeg" alt="Ramo 024">
+      <img src="ramo_024.jpeg" alt="Ramo 024" onclick="ampliarImagen(this.src)">
       <h3>Ramo 024</h3>
-      <p>Precio: $436000</p>
-      <input type="checkbox" value="Ramo 024|436000|ramo_024.jpeg"> Seleccionar
+      <p>Precio: $ 4.360</p>
+      <input type="checkbox" value="Ramo 024|$ 4.360|ramo_024.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_025.jpeg" alt="Ramo 025">
+      <img src="ramo_025.jpeg" alt="Ramo 025" onclick="ampliarImagen(this.src)">
       <h3>Ramo 025</h3>
-      <p>Precio: $435000</p>
-      <input type="checkbox" value="Ramo 025|435000|ramo_025.jpeg"> Seleccionar
+      <p>Precio: $ 4.350</p>
+      <input type="checkbox" value="Ramo 025|$ 4.350|ramo_025.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_026.jpeg" alt="Ramo 026">
+      <img src="ramo_026.jpeg" alt="Ramo 026" onclick="ampliarImagen(this.src)">
       <h3>Ramo 026</h3>
-      <p>Precio: $434000</p>
-      <input type="checkbox" value="Ramo 026|434000|ramo_026.jpeg"> Seleccionar
+      <p>Precio: $ 4.340</p>
+      <input type="checkbox" value="Ramo 026|$ 4.340|ramo_026.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_027.jpeg" alt="Ramo 027">
+      <img src="ramo_027.jpeg" alt="Ramo 027" onclick="ampliarImagen(this.src)">
       <h3>Ramo 027</h3>
-      <p>Precio: $433000</p>
-      <input type="checkbox" value="Ramo 027|433000|ramo_027.jpeg"> Seleccionar
+      <p>Precio: $ 4.330</p>
+      <input type="checkbox" value="Ramo 027|$ 4.330|ramo_027.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_028.jpeg" alt="Ramo 028">
+      <img src="ramo_028.jpeg" alt="Ramo 028" onclick="ampliarImagen(this.src)">
       <h3>Ramo 028</h3>
-      <p>Precio: $432000</p>
-      <input type="checkbox" value="Ramo 028|432000|ramo_028.jpeg"> Seleccionar
+      <p>Precio: $ 4.320</p>
+      <input type="checkbox" value="Ramo 028|$ 4.320|ramo_028.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_029.png" alt="Ramo 029">
+      <img src="ramo_029.png" alt="Ramo 029" onclick="ampliarImagen(this.src)">
       <h3>Ramo 029</h3>
-      <p>Precio: $431000</p>
-      <input type="checkbox" value="Ramo 029|431000|ramo_029.png"> Seleccionar
+      <p>Precio: $ 4.310</p>
+      <input type="checkbox" value="Ramo 029|$ 4.310|ramo_029.png"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_030.jpeg" alt="Ramo 030">
+      <img src="ramo_030.jpeg" alt="Ramo 030" onclick="ampliarImagen(this.src)">
       <h3>Ramo 030</h3>
-      <p>Precio: $430000</p>
-      <input type="checkbox" value="Ramo 030|430000|ramo_030.jpeg"> Seleccionar
+      <p>Precio: $ 4.300</p>
+      <input type="checkbox" value="Ramo 030|$ 4.300|ramo_030.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_031.jpeg" alt="Ramo 031">
+      <img src="ramo_031.jpeg" alt="Ramo 031" onclick="ampliarImagen(this.src)">
       <h3>Ramo 031</h3>
-      <p>Precio: $429000</p>
-      <input type="checkbox" value="Ramo 031|429000|ramo_031.jpeg"> Seleccionar
+      <p>Precio: $ 4.290</p>
+      <input type="checkbox" value="Ramo 031|$ 4.290|ramo_031.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_032.jpeg" alt="Ramo 032">
+      <img src="ramo_032.jpeg" alt="Ramo 032" onclick="ampliarImagen(this.src)">
       <h3>Ramo 032</h3>
-      <p>Precio: $428000</p>
-      <input type="checkbox" value="Ramo 032|428000|ramo_032.jpeg"> Seleccionar
+      <p>Precio: $ 4.280</p>
+      <input type="checkbox" value="Ramo 032|$ 4.280|ramo_032.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_033.jpeg" alt="Ramo 033">
+      <img src="ramo_033.jpeg" alt="Ramo 033" onclick="ampliarImagen(this.src)">
       <h3>Ramo 033</h3>
-      <p>Precio: $427000</p>
-      <input type="checkbox" value="Ramo 033|427000|ramo_033.jpeg"> Seleccionar
+      <p>Precio: $ 4.270</p>
+      <input type="checkbox" value="Ramo 033|$ 4.270|ramo_033.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_034.jpeg" alt="Ramo 034">
+      <img src="ramo_034.jpeg" alt="Ramo 034" onclick="ampliarImagen(this.src)">
       <h3>Ramo 034</h3>
-      <p>Precio: $426000</p>
-      <input type="checkbox" value="Ramo 034|426000|ramo_034.jpeg"> Seleccionar
+      <p>Precio: $ 4.260</p>
+      <input type="checkbox" value="Ramo 034|$ 4.260|ramo_034.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_035.jpeg" alt="Ramo 035">
+      <img src="ramo_035.jpeg" alt="Ramo 035" onclick="ampliarImagen(this.src)">
       <h3>Ramo 035</h3>
-      <p>Precio: $425000</p>
-      <input type="checkbox" value="Ramo 035|425000|ramo_035.jpeg"> Seleccionar
+      <p>Precio: $ 4.250</p>
+      <input type="checkbox" value="Ramo 035|$ 4.250|ramo_035.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_036.jpeg" alt="Ramo 036">
+      <img src="ramo_036.jpeg" alt="Ramo 036" onclick="ampliarImagen(this.src)">
       <h3>Ramo 036</h3>
-      <p>Precio: $424000</p>
-      <input type="checkbox" value="Ramo 036|424000|ramo_036.jpeg"> Seleccionar
+      <p>Precio: $ 4.240</p>
+      <input type="checkbox" value="Ramo 036|$ 4.240|ramo_036.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_037.jpeg" alt="Ramo 037">
+      <img src="ramo_037.jpeg" alt="Ramo 037" onclick="ampliarImagen(this.src)">
       <h3>Ramo 037</h3>
-      <p>Precio: $423000</p>
-      <input type="checkbox" value="Ramo 037|423000|ramo_037.jpeg"> Seleccionar
+      <p>Precio: $ 4.230</p>
+      <input type="checkbox" value="Ramo 037|$ 4.230|ramo_037.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_038.jpeg" alt="Ramo 038">
+      <img src="ramo_038.jpeg" alt="Ramo 038" onclick="ampliarImagen(this.src)">
       <h3>Ramo 038</h3>
-      <p>Precio: $422000</p>
-      <input type="checkbox" value="Ramo 038|422000|ramo_038.jpeg"> Seleccionar
+      <p>Precio: $ 4.220</p>
+      <input type="checkbox" value="Ramo 038|$ 4.220|ramo_038.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_039.jpeg" alt="Ramo 039">
+      <img src="ramo_039.jpeg" alt="Ramo 039" onclick="ampliarImagen(this.src)">
       <h3>Ramo 039</h3>
-      <p>Precio: $421000</p>
-      <input type="checkbox" value="Ramo 039|421000|ramo_039.jpeg"> Seleccionar
+      <p>Precio: $ 4.210</p>
+      <input type="checkbox" value="Ramo 039|$ 4.210|ramo_039.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_040.jpeg" alt="Ramo 040">
+      <img src="ramo_040.jpeg" alt="Ramo 040" onclick="ampliarImagen(this.src)">
       <h3>Ramo 040</h3>
-      <p>Precio: $420000</p>
-      <input type="checkbox" value="Ramo 040|420000|ramo_040.jpeg"> Seleccionar
+      <p>Precio: $ 4.200</p>
+      <input type="checkbox" value="Ramo 040|$ 4.200|ramo_040.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_041.jpeg" alt="Ramo 041">
+      <img src="ramo_041.jpeg" alt="Ramo 041" onclick="ampliarImagen(this.src)">
       <h3>Ramo 041</h3>
-      <p>Precio: $419000</p>
-      <input type="checkbox" value="Ramo 041|419000|ramo_041.jpeg"> Seleccionar
+      <p>Precio: $ 4.190</p>
+      <input type="checkbox" value="Ramo 041|$ 4.190|ramo_041.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_042.jpeg" alt="Ramo 042">
+      <img src="ramo_042.jpeg" alt="Ramo 042" onclick="ampliarImagen(this.src)">
       <h3>Ramo 042</h3>
-      <p>Precio: $418000</p>
-      <input type="checkbox" value="Ramo 042|418000|ramo_042.jpeg"> Seleccionar
+      <p>Precio: $ 4.180</p>
+      <input type="checkbox" value="Ramo 042|$ 4.180|ramo_042.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_043.jpeg" alt="Ramo 043">
+      <img src="ramo_043.jpeg" alt="Ramo 043" onclick="ampliarImagen(this.src)">
       <h3>Ramo 043</h3>
-      <p>Precio: $417000</p>
-      <input type="checkbox" value="Ramo 043|417000|ramo_043.jpeg"> Seleccionar
+      <p>Precio: $ 4.170</p>
+      <input type="checkbox" value="Ramo 043|$ 4.170|ramo_043.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_044.jpeg" alt="Ramo 044">
+      <img src="ramo_044.jpeg" alt="Ramo 044" onclick="ampliarImagen(this.src)">
       <h3>Ramo 044</h3>
-      <p>Precio: $416000</p>
-      <input type="checkbox" value="Ramo 044|416000|ramo_044.jpeg"> Seleccionar
+      <p>Precio: $ 4.160</p>
+      <input type="checkbox" value="Ramo 044|$ 4.160|ramo_044.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_045.jpeg" alt="Ramo 045">
+      <img src="ramo_045.jpeg" alt="Ramo 045" onclick="ampliarImagen(this.src)">
       <h3>Ramo 045</h3>
-      <p>Precio: $415000</p>
-      <input type="checkbox" value="Ramo 045|415000|ramo_045.jpeg"> Seleccionar
+      <p>Precio: $ 4.150</p>
+      <input type="checkbox" value="Ramo 045|$ 4.150|ramo_045.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_046.jpeg" alt="Ramo 046">
+      <img src="ramo_046.jpeg" alt="Ramo 046" onclick="ampliarImagen(this.src)">
       <h3>Ramo 046</h3>
-      <p>Precio: $414000</p>
-      <input type="checkbox" value="Ramo 046|414000|ramo_046.jpeg"> Seleccionar
+      <p>Precio: $ 4.140</p>
+      <input type="checkbox" value="Ramo 046|$ 4.140|ramo_046.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_047.jpeg" alt="Ramo 047">
+      <img src="ramo_047.jpeg" alt="Ramo 047" onclick="ampliarImagen(this.src)">
       <h3>Ramo 047</h3>
-      <p>Precio: $413000</p>
-      <input type="checkbox" value="Ramo 047|413000|ramo_047.jpeg"> Seleccionar
+      <p>Precio: $ 4.130</p>
+      <input type="checkbox" value="Ramo 047|$ 4.130|ramo_047.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_048.jpeg" alt="Ramo 048">
+      <img src="ramo_048.jpeg" alt="Ramo 048" onclick="ampliarImagen(this.src)">
       <h3>Ramo 048</h3>
-      <p>Precio: $412000</p>
-      <input type="checkbox" value="Ramo 048|412000|ramo_048.jpeg"> Seleccionar
+      <p>Precio: $ 4.120</p>
+      <input type="checkbox" value="Ramo 048|$ 4.120|ramo_048.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_049.jpeg" alt="Ramo 049">
+      <img src="ramo_049.jpeg" alt="Ramo 049" onclick="ampliarImagen(this.src)">
       <h3>Ramo 049</h3>
-      <p>Precio: $411000</p>
-      <input type="checkbox" value="Ramo 049|411000|ramo_049.jpeg"> Seleccionar
+      <p>Precio: $ 4.110</p>
+      <input type="checkbox" value="Ramo 049|$ 4.110|ramo_049.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_050.jpeg" alt="Ramo 050">
+      <img src="ramo_050.jpeg" alt="Ramo 050" onclick="ampliarImagen(this.src)">
       <h3>Ramo 050</h3>
-      <p>Precio: $410000</p>
-      <input type="checkbox" value="Ramo 050|410000|ramo_050.jpeg"> Seleccionar
+      <p>Precio: $ 4.100</p>
+      <input type="checkbox" value="Ramo 050|$ 4.100|ramo_050.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_051.jpeg" alt="Ramo 051">
+      <img src="ramo_051.jpeg" alt="Ramo 051" onclick="ampliarImagen(this.src)">
       <h3>Ramo 051</h3>
-      <p>Precio: $409000</p>
-      <input type="checkbox" value="Ramo 051|409000|ramo_051.jpeg"> Seleccionar
+      <p>Precio: $ 4.090</p>
+      <input type="checkbox" value="Ramo 051|$ 4.090|ramo_051.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_052.jpeg" alt="Ramo 052">
+      <img src="ramo_052.jpeg" alt="Ramo 052" onclick="ampliarImagen(this.src)">
       <h3>Ramo 052</h3>
-      <p>Precio: $408000</p>
-      <input type="checkbox" value="Ramo 052|408000|ramo_052.jpeg"> Seleccionar
+      <p>Precio: $ 4.080</p>
+      <input type="checkbox" value="Ramo 052|$ 4.080|ramo_052.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_053.jpeg" alt="Ramo 053">
+      <img src="ramo_053.jpeg" alt="Ramo 053" onclick="ampliarImagen(this.src)">
       <h3>Ramo 053</h3>
-      <p>Precio: $407000</p>
-      <input type="checkbox" value="Ramo 053|407000|ramo_053.jpeg"> Seleccionar
+      <p>Precio: $ 4.070</p>
+      <input type="checkbox" value="Ramo 053|$ 4.070|ramo_053.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_054.jpeg" alt="Ramo 054">
+      <img src="ramo_054.jpeg" alt="Ramo 054" onclick="ampliarImagen(this.src)">
       <h3>Ramo 054</h3>
-      <p>Precio: $406000</p>
-      <input type="checkbox" value="Ramo 054|406000|ramo_054.jpeg"> Seleccionar
+      <p>Precio: $ 4.060</p>
+      <input type="checkbox" value="Ramo 054|$ 4.060|ramo_054.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_055.jpeg" alt="Ramo 055">
+      <img src="ramo_055.jpeg" alt="Ramo 055" onclick="ampliarImagen(this.src)">
       <h3>Ramo 055</h3>
-      <p>Precio: $405000</p>
-      <input type="checkbox" value="Ramo 055|405000|ramo_055.jpeg"> Seleccionar
+      <p>Precio: $ 4.050</p>
+      <input type="checkbox" value="Ramo 055|$ 4.050|ramo_055.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_056.jpeg" alt="Ramo 056">
+      <img src="ramo_056.jpeg" alt="Ramo 056" onclick="ampliarImagen(this.src)">
       <h3>Ramo 056</h3>
-      <p>Precio: $404000</p>
-      <input type="checkbox" value="Ramo 056|404000|ramo_056.jpeg"> Seleccionar
+      <p>Precio: $ 4.040</p>
+      <input type="checkbox" value="Ramo 056|$ 4.040|ramo_056.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_057.jpeg" alt="Ramo 057">
+      <img src="ramo_057.jpeg" alt="Ramo 057" onclick="ampliarImagen(this.src)">
       <h3>Ramo 057</h3>
-      <p>Precio: $403000</p>
-      <input type="checkbox" value="Ramo 057|403000|ramo_057.jpeg"> Seleccionar
+      <p>Precio: $ 4.030</p>
+      <input type="checkbox" value="Ramo 057|$ 4.030|ramo_057.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_058.jpeg" alt="Ramo 058">
+      <img src="ramo_058.jpeg" alt="Ramo 058" onclick="ampliarImagen(this.src)">
       <h3>Ramo 058</h3>
-      <p>Precio: $402000</p>
-      <input type="checkbox" value="Ramo 058|402000|ramo_058.jpeg"> Seleccionar
+      <p>Precio: $ 4.020</p>
+      <input type="checkbox" value="Ramo 058|$ 4.020|ramo_058.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_059.jpeg" alt="Ramo 059">
+      <img src="ramo_059.jpeg" alt="Ramo 059" onclick="ampliarImagen(this.src)">
       <h3>Ramo 059</h3>
-      <p>Precio: $401000</p>
-      <input type="checkbox" value="Ramo 059|401000|ramo_059.jpeg"> Seleccionar
+      <p>Precio: $ 4.010</p>
+      <input type="checkbox" value="Ramo 059|$ 4.010|ramo_059.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_060.jpeg" alt="Ramo 060">
+      <img src="ramo_060.jpeg" alt="Ramo 060" onclick="ampliarImagen(this.src)">
       <h3>Ramo 060</h3>
-      <p>Precio: $400000</p>
-      <input type="checkbox" value="Ramo 060|400000|ramo_060.jpeg"> Seleccionar
+      <p>Precio: $ 4.000</p>
+      <input type="checkbox" value="Ramo 060|$ 4.000|ramo_060.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_061.jpeg" alt="Ramo 061">
+      <img src="ramo_061.jpeg" alt="Ramo 061" onclick="ampliarImagen(this.src)">
       <h3>Ramo 061</h3>
-      <p>Precio: $399000</p>
-      <input type="checkbox" value="Ramo 061|399000|ramo_061.jpeg"> Seleccionar
+      <p>Precio: $ 3.990</p>
+      <input type="checkbox" value="Ramo 061|$ 3.990|ramo_061.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_062.jpeg" alt="Ramo 062">
+      <img src="ramo_062.jpeg" alt="Ramo 062" onclick="ampliarImagen(this.src)">
       <h3>Ramo 062</h3>
-      <p>Precio: $398000</p>
-      <input type="checkbox" value="Ramo 062|398000|ramo_062.jpeg"> Seleccionar
+      <p>Precio: $ 3.980</p>
+      <input type="checkbox" value="Ramo 062|$ 3.980|ramo_062.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_063.jpeg" alt="Ramo 063">
+      <img src="ramo_063.jpeg" alt="Ramo 063" onclick="ampliarImagen(this.src)">
       <h3>Ramo 063</h3>
-      <p>Precio: $397000</p>
-      <input type="checkbox" value="Ramo 063|397000|ramo_063.jpeg"> Seleccionar
+      <p>Precio: $ 3.970</p>
+      <input type="checkbox" value="Ramo 063|$ 3.970|ramo_063.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_064.jpeg" alt="Ramo 064">
+      <img src="ramo_064.jpeg" alt="Ramo 064" onclick="ampliarImagen(this.src)">
       <h3>Ramo 064</h3>
-      <p>Precio: $396000</p>
-      <input type="checkbox" value="Ramo 064|396000|ramo_064.jpeg"> Seleccionar
+      <p>Precio: $ 3.960</p>
+      <input type="checkbox" value="Ramo 064|$ 3.960|ramo_064.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_065.jpeg" alt="Ramo 065">
+      <img src="ramo_065.jpeg" alt="Ramo 065" onclick="ampliarImagen(this.src)">
       <h3>Ramo 065</h3>
-      <p>Precio: $395000</p>
-      <input type="checkbox" value="Ramo 065|395000|ramo_065.jpeg"> Seleccionar
+      <p>Precio: $ 3.950</p>
+      <input type="checkbox" value="Ramo 065|$ 3.950|ramo_065.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_066.jpeg" alt="Ramo 066">
+      <img src="ramo_066.jpeg" alt="Ramo 066" onclick="ampliarImagen(this.src)">
       <h3>Ramo 066</h3>
-      <p>Precio: $394000</p>
-      <input type="checkbox" value="Ramo 066|394000|ramo_066.jpeg"> Seleccionar
+      <p>Precio: $ 3.940</p>
+      <input type="checkbox" value="Ramo 066|$ 3.940|ramo_066.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_067.jpeg" alt="Ramo 067">
+      <img src="ramo_067.jpeg" alt="Ramo 067" onclick="ampliarImagen(this.src)">
       <h3>Ramo 067</h3>
-      <p>Precio: $393000</p>
-      <input type="checkbox" value="Ramo 067|393000|ramo_067.jpeg"> Seleccionar
+      <p>Precio: $ 3.930</p>
+      <input type="checkbox" value="Ramo 067|$ 3.930|ramo_067.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_068.jpeg" alt="Ramo 068">
+      <img src="ramo_068.jpeg" alt="Ramo 068" onclick="ampliarImagen(this.src)">
       <h3>Ramo 068</h3>
-      <p>Precio: $392000</p>
-      <input type="checkbox" value="Ramo 068|392000|ramo_068.jpeg"> Seleccionar
+      <p>Precio: $ 3.920</p>
+      <input type="checkbox" value="Ramo 068|$ 3.920|ramo_068.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_069.jpeg" alt="Ramo 069">
+      <img src="ramo_069.jpeg" alt="Ramo 069" onclick="ampliarImagen(this.src)">
       <h3>Ramo 069</h3>
-      <p>Precio: $391000</p>
-      <input type="checkbox" value="Ramo 069|391000|ramo_069.jpeg"> Seleccionar
+      <p>Precio: $ 3.910</p>
+      <input type="checkbox" value="Ramo 069|$ 3.910|ramo_069.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_070.jpeg" alt="Ramo 070">
+      <img src="ramo_070.jpeg" alt="Ramo 070" onclick="ampliarImagen(this.src)">
       <h3>Ramo 070</h3>
-      <p>Precio: $390000</p>
-      <input type="checkbox" value="Ramo 070|390000|ramo_070.jpeg"> Seleccionar
+      <p>Precio: $ 3.900</p>
+      <input type="checkbox" value="Ramo 070|$ 3.900|ramo_070.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_071.jpeg" alt="Ramo 071">
+      <img src="ramo_071.jpeg" alt="Ramo 071" onclick="ampliarImagen(this.src)">
       <h3>Ramo 071</h3>
-      <p>Precio: $389000</p>
-      <input type="checkbox" value="Ramo 071|389000|ramo_071.jpeg"> Seleccionar
+      <p>Precio: $ 3.890</p>
+      <input type="checkbox" value="Ramo 071|$ 3.890|ramo_071.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_072.jpeg" alt="Ramo 072">
+      <img src="ramo_072.jpeg" alt="Ramo 072" onclick="ampliarImagen(this.src)">
       <h3>Ramo 072</h3>
-      <p>Precio: $388000</p>
-      <input type="checkbox" value="Ramo 072|388000|ramo_072.jpeg"> Seleccionar
+      <p>Precio: $ 3.880</p>
+      <input type="checkbox" value="Ramo 072|$ 3.880|ramo_072.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_073.jpeg" alt="Ramo 073">
+      <img src="ramo_073.jpeg" alt="Ramo 073" onclick="ampliarImagen(this.src)">
       <h3>Ramo 073</h3>
-      <p>Precio: $387000</p>
-      <input type="checkbox" value="Ramo 073|387000|ramo_073.jpeg"> Seleccionar
+      <p>Precio: $ 3.870</p>
+      <input type="checkbox" value="Ramo 073|$ 3.870|ramo_073.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_074.jpeg" alt="Ramo 074">
+      <img src="ramo_074.jpeg" alt="Ramo 074" onclick="ampliarImagen(this.src)">
       <h3>Ramo 074</h3>
-      <p>Precio: $386000</p>
-      <input type="checkbox" value="Ramo 074|386000|ramo_074.jpeg"> Seleccionar
+      <p>Precio: $ 3.860</p>
+      <input type="checkbox" value="Ramo 074|$ 3.860|ramo_074.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_075.jpeg" alt="Ramo 075">
+      <img src="ramo_075.jpeg" alt="Ramo 075" onclick="ampliarImagen(this.src)">
       <h3>Ramo 075</h3>
-      <p>Precio: $385000</p>
-      <input type="checkbox" value="Ramo 075|385000|ramo_075.jpeg"> Seleccionar
+      <p>Precio: $ 3.850</p>
+      <input type="checkbox" value="Ramo 075|$ 3.850|ramo_075.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_076.jpeg" alt="Ramo 076">
+      <img src="ramo_076.jpeg" alt="Ramo 076" onclick="ampliarImagen(this.src)">
       <h3>Ramo 076</h3>
-      <p>Precio: $384000</p>
-      <input type="checkbox" value="Ramo 076|384000|ramo_076.jpeg"> Seleccionar
+      <p>Precio: $ 3.840</p>
+      <input type="checkbox" value="Ramo 076|$ 3.840|ramo_076.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_077.jpeg" alt="Ramo 077">
+      <img src="ramo_077.jpeg" alt="Ramo 077" onclick="ampliarImagen(this.src)">
       <h3>Ramo 077</h3>
-      <p>Precio: $383000</p>
-      <input type="checkbox" value="Ramo 077|383000|ramo_077.jpeg"> Seleccionar
+      <p>Precio: $ 3.830</p>
+      <input type="checkbox" value="Ramo 077|$ 3.830|ramo_077.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_078.jpeg" alt="Ramo 078">
+      <img src="ramo_078.jpeg" alt="Ramo 078" onclick="ampliarImagen(this.src)">
       <h3>Ramo 078</h3>
-      <p>Precio: $382000</p>
-      <input type="checkbox" value="Ramo 078|382000|ramo_078.jpeg"> Seleccionar
+      <p>Precio: $ 3.820</p>
+      <input type="checkbox" value="Ramo 078|$ 3.820|ramo_078.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_079.jpeg" alt="Ramo 079">
+      <img src="ramo_079.jpeg" alt="Ramo 079" onclick="ampliarImagen(this.src)">
       <h3>Ramo 079</h3>
-      <p>Precio: $381000</p>
-      <input type="checkbox" value="Ramo 079|381000|ramo_079.jpeg"> Seleccionar
+      <p>Precio: $ 3.810</p>
+      <input type="checkbox" value="Ramo 079|$ 3.810|ramo_079.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_080.jpeg" alt="Ramo 080">
+      <img src="ramo_080.jpeg" alt="Ramo 080" onclick="ampliarImagen(this.src)">
       <h3>Ramo 080</h3>
-      <p>Precio: $380000</p>
-      <input type="checkbox" value="Ramo 080|380000|ramo_080.jpeg"> Seleccionar
+      <p>Precio: $ 3.800</p>
+      <input type="checkbox" value="Ramo 080|$ 3.800|ramo_080.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_081.jpeg" alt="Ramo 081">
+      <img src="ramo_081.jpeg" alt="Ramo 081" onclick="ampliarImagen(this.src)">
       <h3>Ramo 081</h3>
-      <p>Precio: $379000</p>
-      <input type="checkbox" value="Ramo 081|379000|ramo_081.jpeg"> Seleccionar
+      <p>Precio: $ 3.790</p>
+      <input type="checkbox" value="Ramo 081|$ 3.790|ramo_081.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_082.jpeg" alt="Ramo 082">
+      <img src="ramo_082.jpeg" alt="Ramo 082" onclick="ampliarImagen(this.src)">
       <h3>Ramo 082</h3>
-      <p>Precio: $378000</p>
-      <input type="checkbox" value="Ramo 082|378000|ramo_082.jpeg"> Seleccionar
+      <p>Precio: $ 3.780</p>
+      <input type="checkbox" value="Ramo 082|$ 3.780|ramo_082.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_083.jpeg" alt="Ramo 083">
+      <img src="ramo_083.jpeg" alt="Ramo 083" onclick="ampliarImagen(this.src)">
       <h3>Ramo 083</h3>
-      <p>Precio: $377000</p>
-      <input type="checkbox" value="Ramo 083|377000|ramo_083.jpeg"> Seleccionar
+      <p>Precio: $ 3.770</p>
+      <input type="checkbox" value="Ramo 083|$ 3.770|ramo_083.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_084.jpeg" alt="Ramo 084">
+      <img src="ramo_084.jpeg" alt="Ramo 084" onclick="ampliarImagen(this.src)">
       <h3>Ramo 084</h3>
-      <p>Precio: $376000</p>
-      <input type="checkbox" value="Ramo 084|376000|ramo_084.jpeg"> Seleccionar
+      <p>Precio: $ 3.760</p>
+      <input type="checkbox" value="Ramo 084|$ 3.760|ramo_084.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_085.jpeg" alt="Ramo 085">
+      <img src="ramo_085.jpeg" alt="Ramo 085" onclick="ampliarImagen(this.src)">
       <h3>Ramo 085</h3>
-      <p>Precio: $375000</p>
-      <input type="checkbox" value="Ramo 085|375000|ramo_085.jpeg"> Seleccionar
+      <p>Precio: $ 3.750</p>
+      <input type="checkbox" value="Ramo 085|$ 3.750|ramo_085.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_086.jpeg" alt="Ramo 086">
+      <img src="ramo_086.jpeg" alt="Ramo 086" onclick="ampliarImagen(this.src)">
       <h3>Ramo 086</h3>
-      <p>Precio: $374000</p>
-      <input type="checkbox" value="Ramo 086|374000|ramo_086.jpeg"> Seleccionar
+      <p>Precio: $ 3.740</p>
+      <input type="checkbox" value="Ramo 086|$ 3.740|ramo_086.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_087.jpeg" alt="Ramo 087">
+      <img src="ramo_087.jpeg" alt="Ramo 087" onclick="ampliarImagen(this.src)">
       <h3>Ramo 087</h3>
-      <p>Precio: $373000</p>
-      <input type="checkbox" value="Ramo 087|373000|ramo_087.jpeg"> Seleccionar
+      <p>Precio: $ 3.730</p>
+      <input type="checkbox" value="Ramo 087|$ 3.730|ramo_087.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_088.jpeg" alt="Ramo 088">
+      <img src="ramo_088.jpeg" alt="Ramo 088" onclick="ampliarImagen(this.src)">
       <h3>Ramo 088</h3>
-      <p>Precio: $372000</p>
-      <input type="checkbox" value="Ramo 088|372000|ramo_088.jpeg"> Seleccionar
+      <p>Precio: $ 3.720</p>
+      <input type="checkbox" value="Ramo 088|$ 3.720|ramo_088.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_089.jpeg" alt="Ramo 089">
+      <img src="ramo_089.jpeg" alt="Ramo 089" onclick="ampliarImagen(this.src)">
       <h3>Ramo 089</h3>
-      <p>Precio: $371000</p>
-      <input type="checkbox" value="Ramo 089|371000|ramo_089.jpeg"> Seleccionar
+      <p>Precio: $ 3.710</p>
+      <input type="checkbox" value="Ramo 089|$ 3.710|ramo_089.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_090.jpeg" alt="Ramo 090">
+      <img src="ramo_090.jpeg" alt="Ramo 090" onclick="ampliarImagen(this.src)">
       <h3>Ramo 090</h3>
-      <p>Precio: $370000</p>
-      <input type="checkbox" value="Ramo 090|370000|ramo_090.jpeg"> Seleccionar
+      <p>Precio: $ 3.700</p>
+      <input type="checkbox" value="Ramo 090|$ 3.700|ramo_090.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_091.jpeg" alt="Ramo 091">
+      <img src="ramo_091.jpeg" alt="Ramo 091" onclick="ampliarImagen(this.src)">
       <h3>Ramo 091</h3>
-      <p>Precio: $369000</p>
-      <input type="checkbox" value="Ramo 091|369000|ramo_091.jpeg"> Seleccionar
+      <p>Precio: $ 3.690</p>
+      <input type="checkbox" value="Ramo 091|$ 3.690|ramo_091.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_092.jpeg" alt="Ramo 092">
+      <img src="ramo_092.jpeg" alt="Ramo 092" onclick="ampliarImagen(this.src)">
       <h3>Ramo 092</h3>
-      <p>Precio: $368000</p>
-      <input type="checkbox" value="Ramo 092|368000|ramo_092.jpeg"> Seleccionar
+      <p>Precio: $ 3.680</p>
+      <input type="checkbox" value="Ramo 092|$ 3.680|ramo_092.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_093.jpeg" alt="Ramo 093">
+      <img src="ramo_093.jpeg" alt="Ramo 093" onclick="ampliarImagen(this.src)">
       <h3>Ramo 093</h3>
-      <p>Precio: $367000</p>
-      <input type="checkbox" value="Ramo 093|367000|ramo_093.jpeg"> Seleccionar
+      <p>Precio: $ 3.670</p>
+      <input type="checkbox" value="Ramo 093|$ 3.670|ramo_093.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_094.jpeg" alt="Ramo 094">
+      <img src="ramo_094.jpeg" alt="Ramo 094" onclick="ampliarImagen(this.src)">
       <h3>Ramo 094</h3>
-      <p>Precio: $366000</p>
-      <input type="checkbox" value="Ramo 094|366000|ramo_094.jpeg"> Seleccionar
+      <p>Precio: $ 3.660</p>
+      <input type="checkbox" value="Ramo 094|$ 3.660|ramo_094.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_095.jpeg" alt="Ramo 095">
+      <img src="ramo_095.jpeg" alt="Ramo 095" onclick="ampliarImagen(this.src)">
       <h3>Ramo 095</h3>
-      <p>Precio: $365000</p>
-      <input type="checkbox" value="Ramo 095|365000|ramo_095.jpeg"> Seleccionar
+      <p>Precio: $ 3.650</p>
+      <input type="checkbox" value="Ramo 095|$ 3.650|ramo_095.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_096.jpeg" alt="Ramo 096">
+      <img src="ramo_096.jpeg" alt="Ramo 096" onclick="ampliarImagen(this.src)">
       <h3>Ramo 096</h3>
-      <p>Precio: $364000</p>
-      <input type="checkbox" value="Ramo 096|364000|ramo_096.jpeg"> Seleccionar
+      <p>Precio: $ 3.640</p>
+      <input type="checkbox" value="Ramo 096|$ 3.640|ramo_096.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_097.jpeg" alt="Ramo 097">
+      <img src="ramo_097.jpeg" alt="Ramo 097" onclick="ampliarImagen(this.src)">
       <h3>Ramo 097</h3>
-      <p>Precio: $363000</p>
-      <input type="checkbox" value="Ramo 097|363000|ramo_097.jpeg"> Seleccionar
+      <p>Precio: $ 3.630</p>
+      <input type="checkbox" value="Ramo 097|$ 3.630|ramo_097.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_098.jpeg" alt="Ramo 098">
+      <img src="ramo_098.jpeg" alt="Ramo 098" onclick="ampliarImagen(this.src)">
       <h3>Ramo 098</h3>
-      <p>Precio: $362000</p>
-      <input type="checkbox" value="Ramo 098|362000|ramo_098.jpeg"> Seleccionar
+      <p>Precio: $ 3.620</p>
+      <input type="checkbox" value="Ramo 098|$ 3.620|ramo_098.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_099.jpeg" alt="Ramo 099">
+      <img src="ramo_099.jpeg" alt="Ramo 099" onclick="ampliarImagen(this.src)">
       <h3>Ramo 099</h3>
-      <p>Precio: $361000</p>
-      <input type="checkbox" value="Ramo 099|361000|ramo_099.jpeg"> Seleccionar
+      <p>Precio: $ 3.610</p>
+      <input type="checkbox" value="Ramo 099|$ 3.610|ramo_099.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_100.jpeg" alt="Ramo 100">
+      <img src="ramo_100.jpeg" alt="Ramo 100" onclick="ampliarImagen(this.src)">
       <h3>Ramo 100</h3>
-      <p>Precio: $360000</p>
-      <input type="checkbox" value="Ramo 100|360000|ramo_100.jpeg"> Seleccionar
+      <p>Precio: $ 3.600</p>
+      <input type="checkbox" value="Ramo 100|$ 3.600|ramo_100.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_101.jpeg" alt="Ramo 101">
+      <img src="ramo_101.jpeg" alt="Ramo 101" onclick="ampliarImagen(this.src)">
       <h3>Ramo 101</h3>
-      <p>Precio: $359000</p>
-      <input type="checkbox" value="Ramo 101|359000|ramo_101.jpeg"> Seleccionar
+      <p>Precio: $ 3.590</p>
+      <input type="checkbox" value="Ramo 101|$ 3.590|ramo_101.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_102.jpeg" alt="Ramo 102">
+      <img src="ramo_102.jpeg" alt="Ramo 102" onclick="ampliarImagen(this.src)">
       <h3>Ramo 102</h3>
-      <p>Precio: $358000</p>
-      <input type="checkbox" value="Ramo 102|358000|ramo_102.jpeg"> Seleccionar
+      <p>Precio: $ 3.580</p>
+      <input type="checkbox" value="Ramo 102|$ 3.580|ramo_102.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_103.jpeg" alt="Ramo 103">
+      <img src="ramo_103.jpeg" alt="Ramo 103" onclick="ampliarImagen(this.src)">
       <h3>Ramo 103</h3>
-      <p>Precio: $357000</p>
-      <input type="checkbox" value="Ramo 103|357000|ramo_103.jpeg"> Seleccionar
+      <p>Precio: $ 3.570</p>
+      <input type="checkbox" value="Ramo 103|$ 3.570|ramo_103.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_104.jpeg" alt="Ramo 104">
+      <img src="ramo_104.jpeg" alt="Ramo 104" onclick="ampliarImagen(this.src)">
       <h3>Ramo 104</h3>
-      <p>Precio: $356000</p>
-      <input type="checkbox" value="Ramo 104|356000|ramo_104.jpeg"> Seleccionar
+      <p>Precio: $ 3.560</p>
+      <input type="checkbox" value="Ramo 104|$ 3.560|ramo_104.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_105.jpeg" alt="Ramo 105">
+      <img src="ramo_105.jpeg" alt="Ramo 105" onclick="ampliarImagen(this.src)">
       <h3>Ramo 105</h3>
-      <p>Precio: $355000</p>
-      <input type="checkbox" value="Ramo 105|355000|ramo_105.jpeg"> Seleccionar
+      <p>Precio: $ 3.550</p>
+      <input type="checkbox" value="Ramo 105|$ 3.550|ramo_105.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_106.jpeg" alt="Ramo 106">
+      <img src="ramo_106.jpeg" alt="Ramo 106" onclick="ampliarImagen(this.src)">
       <h3>Ramo 106</h3>
-      <p>Precio: $354000</p>
-      <input type="checkbox" value="Ramo 106|354000|ramo_106.jpeg"> Seleccionar
+      <p>Precio: $ 3.540</p>
+      <input type="checkbox" value="Ramo 106|$ 3.540|ramo_106.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_107.jpeg" alt="Ramo 107">
+      <img src="ramo_107.jpeg" alt="Ramo 107" onclick="ampliarImagen(this.src)">
       <h3>Ramo 107</h3>
-      <p>Precio: $353000</p>
-      <input type="checkbox" value="Ramo 107|353000|ramo_107.jpeg"> Seleccionar
+      <p>Precio: $ 3.530</p>
+      <input type="checkbox" value="Ramo 107|$ 3.530|ramo_107.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_108.jpeg" alt="Ramo 108">
+      <img src="ramo_108.jpeg" alt="Ramo 108" onclick="ampliarImagen(this.src)">
       <h3>Ramo 108</h3>
-      <p>Precio: $352000</p>
-      <input type="checkbox" value="Ramo 108|352000|ramo_108.jpeg"> Seleccionar
+      <p>Precio: $ 3.520</p>
+      <input type="checkbox" value="Ramo 108|$ 3.520|ramo_108.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_109.jpeg" alt="Ramo 109">
+      <img src="ramo_109.jpeg" alt="Ramo 109" onclick="ampliarImagen(this.src)">
       <h3>Ramo 109</h3>
-      <p>Precio: $351000</p>
-      <input type="checkbox" value="Ramo 109|351000|ramo_109.jpeg"> Seleccionar
+      <p>Precio: $ 3.510</p>
+      <input type="checkbox" value="Ramo 109|$ 3.510|ramo_109.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_110.jpeg" alt="Ramo 110">
+      <img src="ramo_110.jpeg" alt="Ramo 110" onclick="ampliarImagen(this.src)">
       <h3>Ramo 110</h3>
-      <p>Precio: $350000</p>
-      <input type="checkbox" value="Ramo 110|350000|ramo_110.jpeg"> Seleccionar
+      <p>Precio: $ 3.500</p>
+      <input type="checkbox" value="Ramo 110|$ 3.500|ramo_110.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_111.jpeg" alt="Ramo 111">
+      <img src="ramo_111.jpeg" alt="Ramo 111" onclick="ampliarImagen(this.src)">
       <h3>Ramo 111</h3>
-      <p>Precio: $349000</p>
-      <input type="checkbox" value="Ramo 111|349000|ramo_111.jpeg"> Seleccionar
+      <p>Precio: $ 3.490</p>
+      <input type="checkbox" value="Ramo 111|$ 3.490|ramo_111.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_112.jpeg" alt="Ramo 112">
+      <img src="ramo_112.jpeg" alt="Ramo 112" onclick="ampliarImagen(this.src)">
       <h3>Ramo 112</h3>
-      <p>Precio: $348000</p>
-      <input type="checkbox" value="Ramo 112|348000|ramo_112.jpeg"> Seleccionar
+      <p>Precio: $ 3.480</p>
+      <input type="checkbox" value="Ramo 112|$ 3.480|ramo_112.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_113.jpeg" alt="Ramo 113">
+      <img src="ramo_113.jpeg" alt="Ramo 113" onclick="ampliarImagen(this.src)">
       <h3>Ramo 113</h3>
-      <p>Precio: $347000</p>
-      <input type="checkbox" value="Ramo 113|347000|ramo_113.jpeg"> Seleccionar
+      <p>Precio: $ 3.470</p>
+      <input type="checkbox" value="Ramo 113|$ 3.470|ramo_113.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_114.jpeg" alt="Ramo 114">
+      <img src="ramo_114.jpeg" alt="Ramo 114" onclick="ampliarImagen(this.src)">
       <h3>Ramo 114</h3>
-      <p>Precio: $346000</p>
-      <input type="checkbox" value="Ramo 114|346000|ramo_114.jpeg"> Seleccionar
+      <p>Precio: $ 3.460</p>
+      <input type="checkbox" value="Ramo 114|$ 3.460|ramo_114.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_115.jpeg" alt="Ramo 115">
+      <img src="ramo_115.jpeg" alt="Ramo 115" onclick="ampliarImagen(this.src)">
       <h3>Ramo 115</h3>
-      <p>Precio: $345000</p>
-      <input type="checkbox" value="Ramo 115|345000|ramo_115.jpeg"> Seleccionar
+      <p>Precio: $ 3.450</p>
+      <input type="checkbox" value="Ramo 115|$ 3.450|ramo_115.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_116.jpeg" alt="Ramo 116">
+      <img src="ramo_116.jpeg" alt="Ramo 116" onclick="ampliarImagen(this.src)">
       <h3>Ramo 116</h3>
-      <p>Precio: $344000</p>
-      <input type="checkbox" value="Ramo 116|344000|ramo_116.jpeg"> Seleccionar
+      <p>Precio: $ 3.440</p>
+      <input type="checkbox" value="Ramo 116|$ 3.440|ramo_116.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_117.jpeg" alt="Ramo 117">
+      <img src="ramo_117.jpeg" alt="Ramo 117" onclick="ampliarImagen(this.src)">
       <h3>Ramo 117</h3>
-      <p>Precio: $343000</p>
-      <input type="checkbox" value="Ramo 117|343000|ramo_117.jpeg"> Seleccionar
+      <p>Precio: $ 3.430</p>
+      <input type="checkbox" value="Ramo 117|$ 3.430|ramo_117.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_118.jpeg" alt="Ramo 118">
+      <img src="ramo_118.jpeg" alt="Ramo 118" onclick="ampliarImagen(this.src)">
       <h3>Ramo 118</h3>
-      <p>Precio: $342000</p>
-      <input type="checkbox" value="Ramo 118|342000|ramo_118.jpeg"> Seleccionar
+      <p>Precio: $ 3.420</p>
+      <input type="checkbox" value="Ramo 118|$ 3.420|ramo_118.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_119.jpeg" alt="Ramo 119">
+      <img src="ramo_119.jpeg" alt="Ramo 119" onclick="ampliarImagen(this.src)">
       <h3>Ramo 119</h3>
-      <p>Precio: $341000</p>
-      <input type="checkbox" value="Ramo 119|341000|ramo_119.jpeg"> Seleccionar
+      <p>Precio: $ 3.410</p>
+      <input type="checkbox" value="Ramo 119|$ 3.410|ramo_119.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_120.jpeg" alt="Ramo 120">
+      <img src="ramo_120.jpeg" alt="Ramo 120" onclick="ampliarImagen(this.src)">
       <h3>Ramo 120</h3>
-      <p>Precio: $340000</p>
-      <input type="checkbox" value="Ramo 120|340000|ramo_120.jpeg"> Seleccionar
+      <p>Precio: $ 3.400</p>
+      <input type="checkbox" value="Ramo 120|$ 3.400|ramo_120.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_121.jpeg" alt="Ramo 121">
+      <img src="ramo_121.jpeg" alt="Ramo 121" onclick="ampliarImagen(this.src)">
       <h3>Ramo 121</h3>
-      <p>Precio: $339000</p>
-      <input type="checkbox" value="Ramo 121|339000|ramo_121.jpeg"> Seleccionar
+      <p>Precio: $ 3.390</p>
+      <input type="checkbox" value="Ramo 121|$ 3.390|ramo_121.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_122.jpeg" alt="Ramo 122">
+      <img src="ramo_122.jpeg" alt="Ramo 122" onclick="ampliarImagen(this.src)">
       <h3>Ramo 122</h3>
-      <p>Precio: $338000</p>
-      <input type="checkbox" value="Ramo 122|338000|ramo_122.jpeg"> Seleccionar
+      <p>Precio: $ 3.380</p>
+      <input type="checkbox" value="Ramo 122|$ 3.380|ramo_122.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_123.jpeg" alt="Ramo 123">
+      <img src="ramo_123.jpeg" alt="Ramo 123" onclick="ampliarImagen(this.src)">
       <h3>Ramo 123</h3>
-      <p>Precio: $337000</p>
-      <input type="checkbox" value="Ramo 123|337000|ramo_123.jpeg"> Seleccionar
+      <p>Precio: $ 3.370</p>
+      <input type="checkbox" value="Ramo 123|$ 3.370|ramo_123.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_124.jpeg" alt="Ramo 124">
+      <img src="ramo_124.jpeg" alt="Ramo 124" onclick="ampliarImagen(this.src)">
       <h3>Ramo 124</h3>
-      <p>Precio: $336000</p>
-      <input type="checkbox" value="Ramo 124|336000|ramo_124.jpeg"> Seleccionar
+      <p>Precio: $ 3.360</p>
+      <input type="checkbox" value="Ramo 124|$ 3.360|ramo_124.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_125.jpeg" alt="Ramo 125">
+      <img src="ramo_125.jpeg" alt="Ramo 125" onclick="ampliarImagen(this.src)">
       <h3>Ramo 125</h3>
-      <p>Precio: $335000</p>
-      <input type="checkbox" value="Ramo 125|335000|ramo_125.jpeg"> Seleccionar
+      <p>Precio: $ 3.350</p>
+      <input type="checkbox" value="Ramo 125|$ 3.350|ramo_125.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_126.jpeg" alt="Ramo 126">
+      <img src="ramo_126.jpeg" alt="Ramo 126" onclick="ampliarImagen(this.src)">
       <h3>Ramo 126</h3>
-      <p>Precio: $334000</p>
-      <input type="checkbox" value="Ramo 126|334000|ramo_126.jpeg"> Seleccionar
+      <p>Precio: $ 3.340</p>
+      <input type="checkbox" value="Ramo 126|$ 3.340|ramo_126.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_127.jpeg" alt="Ramo 127">
+      <img src="ramo_127.jpeg" alt="Ramo 127" onclick="ampliarImagen(this.src)">
       <h3>Ramo 127</h3>
-      <p>Precio: $333000</p>
-      <input type="checkbox" value="Ramo 127|333000|ramo_127.jpeg"> Seleccionar
+      <p>Precio: $ 3.330</p>
+      <input type="checkbox" value="Ramo 127|$ 3.330|ramo_127.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_128.jpeg" alt="Ramo 128">
+      <img src="ramo_128.jpeg" alt="Ramo 128" onclick="ampliarImagen(this.src)">
       <h3>Ramo 128</h3>
-      <p>Precio: $332000</p>
-      <input type="checkbox" value="Ramo 128|332000|ramo_128.jpeg"> Seleccionar
+      <p>Precio: $ 3.320</p>
+      <input type="checkbox" value="Ramo 128|$ 3.320|ramo_128.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_129.jpeg" alt="Ramo 129">
+      <img src="ramo_129.jpeg" alt="Ramo 129" onclick="ampliarImagen(this.src)">
       <h3>Ramo 129</h3>
-      <p>Precio: $331000</p>
-      <input type="checkbox" value="Ramo 129|331000|ramo_129.jpeg"> Seleccionar
+      <p>Precio: $ 3.310</p>
+      <input type="checkbox" value="Ramo 129|$ 3.310|ramo_129.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_130.jpeg" alt="Ramo 130">
+      <img src="ramo_130.jpeg" alt="Ramo 130" onclick="ampliarImagen(this.src)">
       <h3>Ramo 130</h3>
-      <p>Precio: $330000</p>
-      <input type="checkbox" value="Ramo 130|330000|ramo_130.jpeg"> Seleccionar
+      <p>Precio: $ 3.300</p>
+      <input type="checkbox" value="Ramo 130|$ 3.300|ramo_130.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_131.jpeg" alt="Ramo 131">
+      <img src="ramo_131.jpeg" alt="Ramo 131" onclick="ampliarImagen(this.src)">
       <h3>Ramo 131</h3>
-      <p>Precio: $329000</p>
-      <input type="checkbox" value="Ramo 131|329000|ramo_131.jpeg"> Seleccionar
+      <p>Precio: $ 3.290</p>
+      <input type="checkbox" value="Ramo 131|$ 3.290|ramo_131.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_132.jpeg" alt="Ramo 132">
+      <img src="ramo_132.jpeg" alt="Ramo 132" onclick="ampliarImagen(this.src)">
       <h3>Ramo 132</h3>
-      <p>Precio: $328000</p>
-      <input type="checkbox" value="Ramo 132|328000|ramo_132.jpeg"> Seleccionar
+      <p>Precio: $ 3.280</p>
+      <input type="checkbox" value="Ramo 132|$ 3.280|ramo_132.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_133.jpeg" alt="Ramo 133">
+      <img src="ramo_133.jpeg" alt="Ramo 133" onclick="ampliarImagen(this.src)">
       <h3>Ramo 133</h3>
-      <p>Precio: $327000</p>
-      <input type="checkbox" value="Ramo 133|327000|ramo_133.jpeg"> Seleccionar
+      <p>Precio: $ 3.270</p>
+      <input type="checkbox" value="Ramo 133|$ 3.270|ramo_133.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_134.jpeg" alt="Ramo 134">
+      <img src="ramo_134.jpeg" alt="Ramo 134" onclick="ampliarImagen(this.src)">
       <h3>Ramo 134</h3>
-      <p>Precio: $326000</p>
-      <input type="checkbox" value="Ramo 134|326000|ramo_134.jpeg"> Seleccionar
+      <p>Precio: $ 3.260</p>
+      <input type="checkbox" value="Ramo 134|$ 3.260|ramo_134.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_135.jpeg" alt="Ramo 135">
+      <img src="ramo_135.jpeg" alt="Ramo 135" onclick="ampliarImagen(this.src)">
       <h3>Ramo 135</h3>
-      <p>Precio: $325000</p>
-      <input type="checkbox" value="Ramo 135|325000|ramo_135.jpeg"> Seleccionar
+      <p>Precio: $ 3.250</p>
+      <input type="checkbox" value="Ramo 135|$ 3.250|ramo_135.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_136.jpeg" alt="Ramo 136">
+      <img src="ramo_136.jpeg" alt="Ramo 136" onclick="ampliarImagen(this.src)">
       <h3>Ramo 136</h3>
-      <p>Precio: $324000</p>
-      <input type="checkbox" value="Ramo 136|324000|ramo_136.jpeg"> Seleccionar
+      <p>Precio: $ 3.240</p>
+      <input type="checkbox" value="Ramo 136|$ 3.240|ramo_136.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_137.jpeg" alt="Ramo 137">
+      <img src="ramo_137.jpeg" alt="Ramo 137" onclick="ampliarImagen(this.src)">
       <h3>Ramo 137</h3>
-      <p>Precio: $323000</p>
-      <input type="checkbox" value="Ramo 137|323000|ramo_137.jpeg"> Seleccionar
+      <p>Precio: $ 3.230</p>
+      <input type="checkbox" value="Ramo 137|$ 3.230|ramo_137.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_138.jpeg" alt="Ramo 138">
+      <img src="ramo_138.jpeg" alt="Ramo 138" onclick="ampliarImagen(this.src)">
       <h3>Ramo 138</h3>
-      <p>Precio: $322000</p>
-      <input type="checkbox" value="Ramo 138|322000|ramo_138.jpeg"> Seleccionar
+      <p>Precio: $ 3.220</p>
+      <input type="checkbox" value="Ramo 138|$ 3.220|ramo_138.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_139.jpeg" alt="Ramo 139">
+      <img src="ramo_139.jpeg" alt="Ramo 139" onclick="ampliarImagen(this.src)">
       <h3>Ramo 139</h3>
-      <p>Precio: $321000</p>
-      <input type="checkbox" value="Ramo 139|321000|ramo_139.jpeg"> Seleccionar
+      <p>Precio: $ 3.210</p>
+      <input type="checkbox" value="Ramo 139|$ 3.210|ramo_139.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_140.jpeg" alt="Ramo 140">
+      <img src="ramo_140.jpeg" alt="Ramo 140" onclick="ampliarImagen(this.src)">
       <h3>Ramo 140</h3>
-      <p>Precio: $320000</p>
-      <input type="checkbox" value="Ramo 140|320000|ramo_140.jpeg"> Seleccionar
+      <p>Precio: $ 3.200</p>
+      <input type="checkbox" value="Ramo 140|$ 3.200|ramo_140.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_141.jpeg" alt="Ramo 141">
+      <img src="ramo_141.jpeg" alt="Ramo 141" onclick="ampliarImagen(this.src)">
       <h3>Ramo 141</h3>
-      <p>Precio: $319000</p>
-      <input type="checkbox" value="Ramo 141|319000|ramo_141.jpeg"> Seleccionar
+      <p>Precio: $ 3.190</p>
+      <input type="checkbox" value="Ramo 141|$ 3.190|ramo_141.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_142.jpeg" alt="Ramo 142">
+      <img src="ramo_142.jpeg" alt="Ramo 142" onclick="ampliarImagen(this.src)">
       <h3>Ramo 142</h3>
-      <p>Precio: $318000</p>
-      <input type="checkbox" value="Ramo 142|318000|ramo_142.jpeg"> Seleccionar
+      <p>Precio: $ 3.180</p>
+      <input type="checkbox" value="Ramo 142|$ 3.180|ramo_142.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_143.jpeg" alt="Ramo 143">
+      <img src="ramo_143.jpeg" alt="Ramo 143" onclick="ampliarImagen(this.src)">
       <h3>Ramo 143</h3>
-      <p>Precio: $317000</p>
-      <input type="checkbox" value="Ramo 143|317000|ramo_143.jpeg"> Seleccionar
+      <p>Precio: $ 3.170</p>
+      <input type="checkbox" value="Ramo 143|$ 3.170|ramo_143.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_144.jpeg" alt="Ramo 144">
+      <img src="ramo_144.jpeg" alt="Ramo 144" onclick="ampliarImagen(this.src)">
       <h3>Ramo 144</h3>
-      <p>Precio: $316000</p>
-      <input type="checkbox" value="Ramo 144|316000|ramo_144.jpeg"> Seleccionar
+      <p>Precio: $ 3.160</p>
+      <input type="checkbox" value="Ramo 144|$ 3.160|ramo_144.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_145.jpeg" alt="Ramo 145">
+      <img src="ramo_145.jpeg" alt="Ramo 145" onclick="ampliarImagen(this.src)">
       <h3>Ramo 145</h3>
-      <p>Precio: $315000</p>
-      <input type="checkbox" value="Ramo 145|315000|ramo_145.jpeg"> Seleccionar
+      <p>Precio: $ 3.150</p>
+      <input type="checkbox" value="Ramo 145|$ 3.150|ramo_145.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_146.jpeg" alt="Ramo 146">
+      <img src="ramo_146.jpeg" alt="Ramo 146" onclick="ampliarImagen(this.src)">
       <h3>Ramo 146</h3>
-      <p>Precio: $314000</p>
-      <input type="checkbox" value="Ramo 146|314000|ramo_146.jpeg"> Seleccionar
+      <p>Precio: $ 3.140</p>
+      <input type="checkbox" value="Ramo 146|$ 3.140|ramo_146.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_147.jpeg" alt="Ramo 147">
+      <img src="ramo_147.jpeg" alt="Ramo 147" onclick="ampliarImagen(this.src)">
       <h3>Ramo 147</h3>
-      <p>Precio: $313000</p>
-      <input type="checkbox" value="Ramo 147|313000|ramo_147.jpeg"> Seleccionar
+      <p>Precio: $ 3.130</p>
+      <input type="checkbox" value="Ramo 147|$ 3.130|ramo_147.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_148.jpeg" alt="Ramo 148">
+      <img src="ramo_148.jpeg" alt="Ramo 148" onclick="ampliarImagen(this.src)">
       <h3>Ramo 148</h3>
-      <p>Precio: $312000</p>
-      <input type="checkbox" value="Ramo 148|312000|ramo_148.jpeg"> Seleccionar
+      <p>Precio: $ 3.120</p>
+      <input type="checkbox" value="Ramo 148|$ 3.120|ramo_148.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_149.jpeg" alt="Ramo 149">
+      <img src="ramo_149.jpeg" alt="Ramo 149" onclick="ampliarImagen(this.src)">
       <h3>Ramo 149</h3>
-      <p>Precio: $311000</p>
-      <input type="checkbox" value="Ramo 149|311000|ramo_149.jpeg"> Seleccionar
+      <p>Precio: $ 3.110</p>
+      <input type="checkbox" value="Ramo 149|$ 3.110|ramo_149.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_150.jpeg" alt="Ramo 150">
+      <img src="ramo_150.jpeg" alt="Ramo 150" onclick="ampliarImagen(this.src)">
       <h3>Ramo 150</h3>
-      <p>Precio: $310000</p>
-      <input type="checkbox" value="Ramo 150|310000|ramo_150.jpeg"> Seleccionar
+      <p>Precio: $ 3.100</p>
+      <input type="checkbox" value="Ramo 150|$ 3.100|ramo_150.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_151.jpeg" alt="Ramo 151">
+      <img src="ramo_151.jpeg" alt="Ramo 151" onclick="ampliarImagen(this.src)">
       <h3>Ramo 151</h3>
-      <p>Precio: $309000</p>
-      <input type="checkbox" value="Ramo 151|309000|ramo_151.jpeg"> Seleccionar
+      <p>Precio: $ 3.090</p>
+      <input type="checkbox" value="Ramo 151|$ 3.090|ramo_151.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_152.jpeg" alt="Ramo 152">
+      <img src="ramo_152.jpeg" alt="Ramo 152" onclick="ampliarImagen(this.src)">
       <h3>Ramo 152</h3>
-      <p>Precio: $308000</p>
-      <input type="checkbox" value="Ramo 152|308000|ramo_152.jpeg"> Seleccionar
+      <p>Precio: $ 3.080</p>
+      <input type="checkbox" value="Ramo 152|$ 3.080|ramo_152.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_153.jpeg" alt="Ramo 153">
+      <img src="ramo_153.jpeg" alt="Ramo 153" onclick="ampliarImagen(this.src)">
       <h3>Ramo 153</h3>
-      <p>Precio: $307000</p>
-      <input type="checkbox" value="Ramo 153|307000|ramo_153.jpeg"> Seleccionar
+      <p>Precio: $ 3.070</p>
+      <input type="checkbox" value="Ramo 153|$ 3.070|ramo_153.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_154.jpeg" alt="Ramo 154">
+      <img src="ramo_154.jpeg" alt="Ramo 154" onclick="ampliarImagen(this.src)">
       <h3>Ramo 154</h3>
-      <p>Precio: $306000</p>
-      <input type="checkbox" value="Ramo 154|306000|ramo_154.jpeg"> Seleccionar
+      <p>Precio: $ 3.060</p>
+      <input type="checkbox" value="Ramo 154|$ 3.060|ramo_154.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_155.jpeg" alt="Ramo 155">
+      <img src="ramo_155.jpeg" alt="Ramo 155" onclick="ampliarImagen(this.src)">
       <h3>Ramo 155</h3>
-      <p>Precio: $305000</p>
-      <input type="checkbox" value="Ramo 155|305000|ramo_155.jpeg"> Seleccionar
+      <p>Precio: $ 3.050</p>
+      <input type="checkbox" value="Ramo 155|$ 3.050|ramo_155.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_156.jpeg" alt="Ramo 156">
+      <img src="ramo_156.jpeg" alt="Ramo 156" onclick="ampliarImagen(this.src)">
       <h3>Ramo 156</h3>
-      <p>Precio: $304000</p>
-      <input type="checkbox" value="Ramo 156|304000|ramo_156.jpeg"> Seleccionar
+      <p>Precio: $ 3.040</p>
+      <input type="checkbox" value="Ramo 156|$ 3.040|ramo_156.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_157.jpeg" alt="Ramo 157">
+      <img src="ramo_157.jpeg" alt="Ramo 157" onclick="ampliarImagen(this.src)">
       <h3>Ramo 157</h3>
-      <p>Precio: $303000</p>
-      <input type="checkbox" value="Ramo 157|303000|ramo_157.jpeg"> Seleccionar
+      <p>Precio: $ 3.030</p>
+      <input type="checkbox" value="Ramo 157|$ 3.030|ramo_157.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_158.jpeg" alt="Ramo 158">
+      <img src="ramo_158.jpeg" alt="Ramo 158" onclick="ampliarImagen(this.src)">
       <h3>Ramo 158</h3>
-      <p>Precio: $302000</p>
-      <input type="checkbox" value="Ramo 158|302000|ramo_158.jpeg"> Seleccionar
+      <p>Precio: $ 3.020</p>
+      <input type="checkbox" value="Ramo 158|$ 3.020|ramo_158.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_159.jpeg" alt="Ramo 159">
+      <img src="ramo_159.jpeg" alt="Ramo 159" onclick="ampliarImagen(this.src)">
       <h3>Ramo 159</h3>
-      <p>Precio: $301000</p>
-      <input type="checkbox" value="Ramo 159|301000|ramo_159.jpeg"> Seleccionar
+      <p>Precio: $ 3.010</p>
+      <input type="checkbox" value="Ramo 159|$ 3.010|ramo_159.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_160.jpeg" alt="Ramo 160">
+      <img src="ramo_160.jpeg" alt="Ramo 160" onclick="ampliarImagen(this.src)">
       <h3>Ramo 160</h3>
-      <p>Precio: $300000</p>
-      <input type="checkbox" value="Ramo 160|300000|ramo_160.jpeg"> Seleccionar
+      <p>Precio: $ 3.000</p>
+      <input type="checkbox" value="Ramo 160|$ 3.000|ramo_160.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_161.jpeg" alt="Ramo 161">
+      <img src="ramo_161.jpeg" alt="Ramo 161" onclick="ampliarImagen(this.src)">
       <h3>Ramo 161</h3>
-      <p>Precio: $299000</p>
-      <input type="checkbox" value="Ramo 161|299000|ramo_161.jpeg"> Seleccionar
+      <p>Precio: $ 2.990</p>
+      <input type="checkbox" value="Ramo 161|$ 2.990|ramo_161.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_162.jpeg" alt="Ramo 162">
+      <img src="ramo_162.jpeg" alt="Ramo 162" onclick="ampliarImagen(this.src)">
       <h3>Ramo 162</h3>
-      <p>Precio: $298000</p>
-      <input type="checkbox" value="Ramo 162|298000|ramo_162.jpeg"> Seleccionar
+      <p>Precio: $ 2.980</p>
+      <input type="checkbox" value="Ramo 162|$ 2.980|ramo_162.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_163.jpeg" alt="Ramo 163">
+      <img src="ramo_163.jpeg" alt="Ramo 163" onclick="ampliarImagen(this.src)">
       <h3>Ramo 163</h3>
-      <p>Precio: $297000</p>
-      <input type="checkbox" value="Ramo 163|297000|ramo_163.jpeg"> Seleccionar
+      <p>Precio: $ 2.970</p>
+      <input type="checkbox" value="Ramo 163|$ 2.970|ramo_163.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_164.jpeg" alt="Ramo 164">
+      <img src="ramo_164.jpeg" alt="Ramo 164" onclick="ampliarImagen(this.src)">
       <h3>Ramo 164</h3>
-      <p>Precio: $296000</p>
-      <input type="checkbox" value="Ramo 164|296000|ramo_164.jpeg"> Seleccionar
+      <p>Precio: $ 2.960</p>
+      <input type="checkbox" value="Ramo 164|$ 2.960|ramo_164.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_165.jpeg" alt="Ramo 165">
+      <img src="ramo_165.jpeg" alt="Ramo 165" onclick="ampliarImagen(this.src)">
       <h3>Ramo 165</h3>
-      <p>Precio: $295000</p>
-      <input type="checkbox" value="Ramo 165|295000|ramo_165.jpeg"> Seleccionar
+      <p>Precio: $ 2.950</p>
+      <input type="checkbox" value="Ramo 165|$ 2.950|ramo_165.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_166.jpeg" alt="Ramo 166">
+      <img src="ramo_166.jpeg" alt="Ramo 166" onclick="ampliarImagen(this.src)">
       <h3>Ramo 166</h3>
-      <p>Precio: $294000</p>
-      <input type="checkbox" value="Ramo 166|294000|ramo_166.jpeg"> Seleccionar
+      <p>Precio: $ 2.940</p>
+      <input type="checkbox" value="Ramo 166|$ 2.940|ramo_166.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_167.jpeg" alt="Ramo 167">
+      <img src="ramo_167.jpeg" alt="Ramo 167" onclick="ampliarImagen(this.src)">
       <h3>Ramo 167</h3>
-      <p>Precio: $293000</p>
-      <input type="checkbox" value="Ramo 167|293000|ramo_167.jpeg"> Seleccionar
+      <p>Precio: $ 2.930</p>
+      <input type="checkbox" value="Ramo 167|$ 2.930|ramo_167.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_168.jpeg" alt="Ramo 168">
+      <img src="ramo_168.jpeg" alt="Ramo 168" onclick="ampliarImagen(this.src)">
       <h3>Ramo 168</h3>
-      <p>Precio: $292000</p>
-      <input type="checkbox" value="Ramo 168|292000|ramo_168.jpeg"> Seleccionar
+      <p>Precio: $ 2.920</p>
+      <input type="checkbox" value="Ramo 168|$ 2.920|ramo_168.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_169.jpeg" alt="Ramo 169">
+      <img src="ramo_169.jpeg" alt="Ramo 169" onclick="ampliarImagen(this.src)">
       <h3>Ramo 169</h3>
-      <p>Precio: $291000</p>
-      <input type="checkbox" value="Ramo 169|291000|ramo_169.jpeg"> Seleccionar
+      <p>Precio: $ 2.910</p>
+      <input type="checkbox" value="Ramo 169|$ 2.910|ramo_169.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_170.jpeg" alt="Ramo 170">
+      <img src="ramo_170.jpeg" alt="Ramo 170" onclick="ampliarImagen(this.src)">
       <h3>Ramo 170</h3>
-      <p>Precio: $290000</p>
-      <input type="checkbox" value="Ramo 170|290000|ramo_170.jpeg"> Seleccionar
+      <p>Precio: $ 2.900</p>
+      <input type="checkbox" value="Ramo 170|$ 2.900|ramo_170.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_171.jpeg" alt="Ramo 171">
+      <img src="ramo_171.jpeg" alt="Ramo 171" onclick="ampliarImagen(this.src)">
       <h3>Ramo 171</h3>
-      <p>Precio: $289000</p>
-      <input type="checkbox" value="Ramo 171|289000|ramo_171.jpeg"> Seleccionar
+      <p>Precio: $ 2.890</p>
+      <input type="checkbox" value="Ramo 171|$ 2.890|ramo_171.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_172.jpeg" alt="Ramo 172">
+      <img src="ramo_172.jpeg" alt="Ramo 172" onclick="ampliarImagen(this.src)">
       <h3>Ramo 172</h3>
-      <p>Precio: $288000</p>
-      <input type="checkbox" value="Ramo 172|288000|ramo_172.jpeg"> Seleccionar
+      <p>Precio: $ 2.880</p>
+      <input type="checkbox" value="Ramo 172|$ 2.880|ramo_172.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_173.jpeg" alt="Ramo 173">
+      <img src="ramo_173.jpeg" alt="Ramo 173" onclick="ampliarImagen(this.src)">
       <h3>Ramo 173</h3>
-      <p>Precio: $287000</p>
-      <input type="checkbox" value="Ramo 173|287000|ramo_173.jpeg"> Seleccionar
+      <p>Precio: $ 2.870</p>
+      <input type="checkbox" value="Ramo 173|$ 2.870|ramo_173.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_174.jpeg" alt="Ramo 174">
+      <img src="ramo_174.jpeg" alt="Ramo 174" onclick="ampliarImagen(this.src)">
       <h3>Ramo 174</h3>
-      <p>Precio: $286000</p>
-      <input type="checkbox" value="Ramo 174|286000|ramo_174.jpeg"> Seleccionar
+      <p>Precio: $ 2.860</p>
+      <input type="checkbox" value="Ramo 174|$ 2.860|ramo_174.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_175.jpeg" alt="Ramo 175">
+      <img src="ramo_175.jpeg" alt="Ramo 175" onclick="ampliarImagen(this.src)">
       <h3>Ramo 175</h3>
-      <p>Precio: $285000</p>
-      <input type="checkbox" value="Ramo 175|285000|ramo_175.jpeg"> Seleccionar
+      <p>Precio: $ 2.850</p>
+      <input type="checkbox" value="Ramo 175|$ 2.850|ramo_175.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_176.jpeg" alt="Ramo 176">
+      <img src="ramo_176.jpeg" alt="Ramo 176" onclick="ampliarImagen(this.src)">
       <h3>Ramo 176</h3>
-      <p>Precio: $284000</p>
-      <input type="checkbox" value="Ramo 176|284000|ramo_176.jpeg"> Seleccionar
+      <p>Precio: $ 2.840</p>
+      <input type="checkbox" value="Ramo 176|$ 2.840|ramo_176.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_177.jpeg" alt="Ramo 177">
+      <img src="ramo_177.jpeg" alt="Ramo 177" onclick="ampliarImagen(this.src)">
       <h3>Ramo 177</h3>
-      <p>Precio: $283000</p>
-      <input type="checkbox" value="Ramo 177|283000|ramo_177.jpeg"> Seleccionar
+      <p>Precio: $ 2.830</p>
+      <input type="checkbox" value="Ramo 177|$ 2.830|ramo_177.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_178.jpeg" alt="Ramo 178">
+      <img src="ramo_178.jpeg" alt="Ramo 178" onclick="ampliarImagen(this.src)">
       <h3>Ramo 178</h3>
-      <p>Precio: $282000</p>
-      <input type="checkbox" value="Ramo 178|282000|ramo_178.jpeg"> Seleccionar
+      <p>Precio: $ 2.820</p>
+      <input type="checkbox" value="Ramo 178|$ 2.820|ramo_178.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_179.jpeg" alt="Ramo 179">
+      <img src="ramo_179.jpeg" alt="Ramo 179" onclick="ampliarImagen(this.src)">
       <h3>Ramo 179</h3>
-      <p>Precio: $281000</p>
-      <input type="checkbox" value="Ramo 179|281000|ramo_179.jpeg"> Seleccionar
+      <p>Precio: $ 2.810</p>
+      <input type="checkbox" value="Ramo 179|$ 2.810|ramo_179.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_180.jpeg" alt="Ramo 180">
+      <img src="ramo_180.jpeg" alt="Ramo 180" onclick="ampliarImagen(this.src)">
       <h3>Ramo 180</h3>
-      <p>Precio: $280000</p>
-      <input type="checkbox" value="Ramo 180|280000|ramo_180.jpeg"> Seleccionar
+      <p>Precio: $ 2.800</p>
+      <input type="checkbox" value="Ramo 180|$ 2.800|ramo_180.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_181.jpeg" alt="Ramo 181">
+      <img src="ramo_181.jpeg" alt="Ramo 181" onclick="ampliarImagen(this.src)">
       <h3>Ramo 181</h3>
-      <p>Precio: $279000</p>
-      <input type="checkbox" value="Ramo 181|279000|ramo_181.jpeg"> Seleccionar
+      <p>Precio: $ 2.790</p>
+      <input type="checkbox" value="Ramo 181|$ 2.790|ramo_181.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_182.jpeg" alt="Ramo 182">
+      <img src="ramo_182.jpeg" alt="Ramo 182" onclick="ampliarImagen(this.src)">
       <h3>Ramo 182</h3>
-      <p>Precio: $278000</p>
-      <input type="checkbox" value="Ramo 182|278000|ramo_182.jpeg"> Seleccionar
+      <p>Precio: $ 2.780</p>
+      <input type="checkbox" value="Ramo 182|$ 2.780|ramo_182.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_183.jpeg" alt="Ramo 183">
+      <img src="ramo_183.jpeg" alt="Ramo 183" onclick="ampliarImagen(this.src)">
       <h3>Ramo 183</h3>
-      <p>Precio: $277000</p>
-      <input type="checkbox" value="Ramo 183|277000|ramo_183.jpeg"> Seleccionar
+      <p>Precio: $ 2.770</p>
+      <input type="checkbox" value="Ramo 183|$ 2.770|ramo_183.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_184.jpeg" alt="Ramo 184">
+      <img src="ramo_184.jpeg" alt="Ramo 184" onclick="ampliarImagen(this.src)">
       <h3>Ramo 184</h3>
-      <p>Precio: $276000</p>
-      <input type="checkbox" value="Ramo 184|276000|ramo_184.jpeg"> Seleccionar
+      <p>Precio: $ 2.760</p>
+      <input type="checkbox" value="Ramo 184|$ 2.760|ramo_184.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_185.jpeg" alt="Ramo 185">
+      <img src="ramo_185.jpeg" alt="Ramo 185" onclick="ampliarImagen(this.src)">
       <h3>Ramo 185</h3>
-      <p>Precio: $275000</p>
-      <input type="checkbox" value="Ramo 185|275000|ramo_185.jpeg"> Seleccionar
+      <p>Precio: $ 2.750</p>
+      <input type="checkbox" value="Ramo 185|$ 2.750|ramo_185.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_186.jpeg" alt="Ramo 186">
+      <img src="ramo_186.jpeg" alt="Ramo 186" onclick="ampliarImagen(this.src)">
       <h3>Ramo 186</h3>
-      <p>Precio: $274000</p>
-      <input type="checkbox" value="Ramo 186|274000|ramo_186.jpeg"> Seleccionar
+      <p>Precio: $ 2.740</p>
+      <input type="checkbox" value="Ramo 186|$ 2.740|ramo_186.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_187.jpeg" alt="Ramo 187">
+      <img src="ramo_187.jpeg" alt="Ramo 187" onclick="ampliarImagen(this.src)">
       <h3>Ramo 187</h3>
-      <p>Precio: $273000</p>
-      <input type="checkbox" value="Ramo 187|273000|ramo_187.jpeg"> Seleccionar
+      <p>Precio: $ 2.730</p>
+      <input type="checkbox" value="Ramo 187|$ 2.730|ramo_187.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_188.jpeg" alt="Ramo 188">
+      <img src="ramo_188.jpeg" alt="Ramo 188" onclick="ampliarImagen(this.src)">
       <h3>Ramo 188</h3>
-      <p>Precio: $272000</p>
-      <input type="checkbox" value="Ramo 188|272000|ramo_188.jpeg"> Seleccionar
+      <p>Precio: $ 2.720</p>
+      <input type="checkbox" value="Ramo 188|$ 2.720|ramo_188.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_189.jpeg" alt="Ramo 189">
+      <img src="ramo_189.jpeg" alt="Ramo 189" onclick="ampliarImagen(this.src)">
       <h3>Ramo 189</h3>
-      <p>Precio: $271000</p>
-      <input type="checkbox" value="Ramo 189|271000|ramo_189.jpeg"> Seleccionar
+      <p>Precio: $ 2.710</p>
+      <input type="checkbox" value="Ramo 189|$ 2.710|ramo_189.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_190.jpeg" alt="Ramo 190">
+      <img src="ramo_190.jpeg" alt="Ramo 190" onclick="ampliarImagen(this.src)">
       <h3>Ramo 190</h3>
-      <p>Precio: $270000</p>
-      <input type="checkbox" value="Ramo 190|270000|ramo_190.jpeg"> Seleccionar
+      <p>Precio: $ 2.700</p>
+      <input type="checkbox" value="Ramo 190|$ 2.700|ramo_190.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_191.jpeg" alt="Ramo 191">
+      <img src="ramo_191.jpeg" alt="Ramo 191" onclick="ampliarImagen(this.src)">
       <h3>Ramo 191</h3>
-      <p>Precio: $269000</p>
-      <input type="checkbox" value="Ramo 191|269000|ramo_191.jpeg"> Seleccionar
+      <p>Precio: $ 2.690</p>
+      <input type="checkbox" value="Ramo 191|$ 2.690|ramo_191.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_192.jpeg" alt="Ramo 192">
+      <img src="ramo_192.jpeg" alt="Ramo 192" onclick="ampliarImagen(this.src)">
       <h3>Ramo 192</h3>
-      <p>Precio: $268000</p>
-      <input type="checkbox" value="Ramo 192|268000|ramo_192.jpeg"> Seleccionar
+      <p>Precio: $ 2.680</p>
+      <input type="checkbox" value="Ramo 192|$ 2.680|ramo_192.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_193.jpeg" alt="Ramo 193">
+      <img src="ramo_193.jpeg" alt="Ramo 193" onclick="ampliarImagen(this.src)">
       <h3>Ramo 193</h3>
-      <p>Precio: $267000</p>
-      <input type="checkbox" value="Ramo 193|267000|ramo_193.jpeg"> Seleccionar
+      <p>Precio: $ 2.670</p>
+      <input type="checkbox" value="Ramo 193|$ 2.670|ramo_193.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_194.jpeg" alt="Ramo 194">
+      <img src="ramo_194.jpeg" alt="Ramo 194" onclick="ampliarImagen(this.src)">
       <h3>Ramo 194</h3>
-      <p>Precio: $266000</p>
-      <input type="checkbox" value="Ramo 194|266000|ramo_194.jpeg"> Seleccionar
+      <p>Precio: $ 2.660</p>
+      <input type="checkbox" value="Ramo 194|$ 2.660|ramo_194.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_195.jpeg" alt="Ramo 195">
+      <img src="ramo_195.jpeg" alt="Ramo 195" onclick="ampliarImagen(this.src)">
       <h3>Ramo 195</h3>
-      <p>Precio: $265000</p>
-      <input type="checkbox" value="Ramo 195|265000|ramo_195.jpeg"> Seleccionar
+      <p>Precio: $ 2.650</p>
+      <input type="checkbox" value="Ramo 195|$ 2.650|ramo_195.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_196.jpeg" alt="Ramo 196">
+      <img src="ramo_196.jpeg" alt="Ramo 196" onclick="ampliarImagen(this.src)">
       <h3>Ramo 196</h3>
-      <p>Precio: $264000</p>
-      <input type="checkbox" value="Ramo 196|264000|ramo_196.jpeg"> Seleccionar
+      <p>Precio: $ 2.640</p>
+      <input type="checkbox" value="Ramo 196|$ 2.640|ramo_196.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_197.jpeg" alt="Ramo 197">
+      <img src="ramo_197.jpeg" alt="Ramo 197" onclick="ampliarImagen(this.src)">
       <h3>Ramo 197</h3>
-      <p>Precio: $263000</p>
-      <input type="checkbox" value="Ramo 197|263000|ramo_197.jpeg"> Seleccionar
+      <p>Precio: $ 2.630</p>
+      <input type="checkbox" value="Ramo 197|$ 2.630|ramo_197.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_198.jpeg" alt="Ramo 198">
+      <img src="ramo_198.jpeg" alt="Ramo 198" onclick="ampliarImagen(this.src)">
       <h3>Ramo 198</h3>
-      <p>Precio: $262000</p>
-      <input type="checkbox" value="Ramo 198|262000|ramo_198.jpeg"> Seleccionar
+      <p>Precio: $ 2.620</p>
+      <input type="checkbox" value="Ramo 198|$ 2.620|ramo_198.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_199.jpeg" alt="Ramo 199">
+      <img src="ramo_199.jpeg" alt="Ramo 199" onclick="ampliarImagen(this.src)">
       <h3>Ramo 199</h3>
-      <p>Precio: $261000</p>
-      <input type="checkbox" value="Ramo 199|261000|ramo_199.jpeg"> Seleccionar
+      <p>Precio: $ 2.610</p>
+      <input type="checkbox" value="Ramo 199|$ 2.610|ramo_199.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_200.jpeg" alt="Ramo 200">
+      <img src="ramo_200.jpeg" alt="Ramo 200" onclick="ampliarImagen(this.src)">
       <h3>Ramo 200</h3>
-      <p>Precio: $260000</p>
-      <input type="checkbox" value="Ramo 200|260000|ramo_200.jpeg"> Seleccionar
+      <p>Precio: $ 2.600</p>
+      <input type="checkbox" value="Ramo 200|$ 2.600|ramo_200.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_201.jpeg" alt="Ramo 201">
+      <img src="ramo_201.jpeg" alt="Ramo 201" onclick="ampliarImagen(this.src)">
       <h3>Ramo 201</h3>
-      <p>Precio: $259000</p>
-      <input type="checkbox" value="Ramo 201|259000|ramo_201.jpeg"> Seleccionar
+      <p>Precio: $ 2.590</p>
+      <input type="checkbox" value="Ramo 201|$ 2.590|ramo_201.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_202.jpeg" alt="Ramo 202">
+      <img src="ramo_202.jpeg" alt="Ramo 202" onclick="ampliarImagen(this.src)">
       <h3>Ramo 202</h3>
-      <p>Precio: $258000</p>
-      <input type="checkbox" value="Ramo 202|258000|ramo_202.jpeg"> Seleccionar
+      <p>Precio: $ 2.580</p>
+      <input type="checkbox" value="Ramo 202|$ 2.580|ramo_202.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_203.jpeg" alt="Ramo 203">
+      <img src="ramo_203.jpeg" alt="Ramo 203" onclick="ampliarImagen(this.src)">
       <h3>Ramo 203</h3>
-      <p>Precio: $257000</p>
-      <input type="checkbox" value="Ramo 203|257000|ramo_203.jpeg"> Seleccionar
+      <p>Precio: $ 2.570</p>
+      <input type="checkbox" value="Ramo 203|$ 2.570|ramo_203.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_204.jpeg" alt="Ramo 204">
+      <img src="ramo_204.jpeg" alt="Ramo 204" onclick="ampliarImagen(this.src)">
       <h3>Ramo 204</h3>
-      <p>Precio: $256000</p>
-      <input type="checkbox" value="Ramo 204|256000|ramo_204.jpeg"> Seleccionar
+      <p>Precio: $ 2.560</p>
+      <input type="checkbox" value="Ramo 204|$ 2.560|ramo_204.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_205.jpeg" alt="Ramo 205">
+      <img src="ramo_205.jpeg" alt="Ramo 205" onclick="ampliarImagen(this.src)">
       <h3>Ramo 205</h3>
-      <p>Precio: $255000</p>
-      <input type="checkbox" value="Ramo 205|255000|ramo_205.jpeg"> Seleccionar
+      <p>Precio: $ 2.550</p>
+      <input type="checkbox" value="Ramo 205|$ 2.550|ramo_205.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_206.jpeg" alt="Ramo 206">
+      <img src="ramo_206.jpeg" alt="Ramo 206" onclick="ampliarImagen(this.src)">
       <h3>Ramo 206</h3>
-      <p>Precio: $254000</p>
-      <input type="checkbox" value="Ramo 206|254000|ramo_206.jpeg"> Seleccionar
+      <p>Precio: $ 2.540</p>
+      <input type="checkbox" value="Ramo 206|$ 2.540|ramo_206.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_207.jpeg" alt="Ramo 207">
+      <img src="ramo_207.jpeg" alt="Ramo 207" onclick="ampliarImagen(this.src)">
       <h3>Ramo 207</h3>
-      <p>Precio: $253000</p>
-      <input type="checkbox" value="Ramo 207|253000|ramo_207.jpeg"> Seleccionar
+      <p>Precio: $ 2.530</p>
+      <input type="checkbox" value="Ramo 207|$ 2.530|ramo_207.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_208.jpeg" alt="Ramo 208">
+      <img src="ramo_208.jpeg" alt="Ramo 208" onclick="ampliarImagen(this.src)">
       <h3>Ramo 208</h3>
-      <p>Precio: $252000</p>
-      <input type="checkbox" value="Ramo 208|252000|ramo_208.jpeg"> Seleccionar
+      <p>Precio: $ 2.520</p>
+      <input type="checkbox" value="Ramo 208|$ 2.520|ramo_208.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_209.jpeg" alt="Ramo 209">
+      <img src="ramo_209.jpeg" alt="Ramo 209" onclick="ampliarImagen(this.src)">
       <h3>Ramo 209</h3>
-      <p>Precio: $251000</p>
-      <input type="checkbox" value="Ramo 209|251000|ramo_209.jpeg"> Seleccionar
+      <p>Precio: $ 2.510</p>
+      <input type="checkbox" value="Ramo 209|$ 2.510|ramo_209.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_210.jpeg" alt="Ramo 210">
+      <img src="ramo_210.jpeg" alt="Ramo 210" onclick="ampliarImagen(this.src)">
       <h3>Ramo 210</h3>
-      <p>Precio: $250000</p>
-      <input type="checkbox" value="Ramo 210|250000|ramo_210.jpeg"> Seleccionar
+      <p>Precio: $ 2.500</p>
+      <input type="checkbox" value="Ramo 210|$ 2.500|ramo_210.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_211.jpeg" alt="Ramo 211">
+      <img src="ramo_211.jpeg" alt="Ramo 211" onclick="ampliarImagen(this.src)">
       <h3>Ramo 211</h3>
-      <p>Precio: $249000</p>
-      <input type="checkbox" value="Ramo 211|249000|ramo_211.jpeg"> Seleccionar
+      <p>Precio: $ 2.490</p>
+      <input type="checkbox" value="Ramo 211|$ 2.490|ramo_211.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_212.jpeg" alt="Ramo 212">
+      <img src="ramo_212.jpeg" alt="Ramo 212" onclick="ampliarImagen(this.src)">
       <h3>Ramo 212</h3>
-      <p>Precio: $248000</p>
-      <input type="checkbox" value="Ramo 212|248000|ramo_212.jpeg"> Seleccionar
+      <p>Precio: $ 2.480</p>
+      <input type="checkbox" value="Ramo 212|$ 2.480|ramo_212.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_213.jpeg" alt="Ramo 213">
+      <img src="ramo_213.jpeg" alt="Ramo 213" onclick="ampliarImagen(this.src)">
       <h3>Ramo 213</h3>
-      <p>Precio: $247000</p>
-      <input type="checkbox" value="Ramo 213|247000|ramo_213.jpeg"> Seleccionar
+      <p>Precio: $ 2.470</p>
+      <input type="checkbox" value="Ramo 213|$ 2.470|ramo_213.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_214.jpeg" alt="Ramo 214">
+      <img src="ramo_214.jpeg" alt="Ramo 214" onclick="ampliarImagen(this.src)">
       <h3>Ramo 214</h3>
-      <p>Precio: $246000</p>
-      <input type="checkbox" value="Ramo 214|246000|ramo_214.jpeg"> Seleccionar
+      <p>Precio: $ 2.460</p>
+      <input type="checkbox" value="Ramo 214|$ 2.460|ramo_214.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_215.jpeg" alt="Ramo 215">
+      <img src="ramo_215.jpeg" alt="Ramo 215" onclick="ampliarImagen(this.src)">
       <h3>Ramo 215</h3>
-      <p>Precio: $245000</p>
-      <input type="checkbox" value="Ramo 215|245000|ramo_215.jpeg"> Seleccionar
+      <p>Precio: $ 2.450</p>
+      <input type="checkbox" value="Ramo 215|$ 2.450|ramo_215.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_216.jpeg" alt="Ramo 216">
+      <img src="ramo_216.jpeg" alt="Ramo 216" onclick="ampliarImagen(this.src)">
       <h3>Ramo 216</h3>
-      <p>Precio: $244000</p>
-      <input type="checkbox" value="Ramo 216|244000|ramo_216.jpeg"> Seleccionar
+      <p>Precio: $ 2.440</p>
+      <input type="checkbox" value="Ramo 216|$ 2.440|ramo_216.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_217.jpeg" alt="Ramo 217">
+      <img src="ramo_217.jpeg" alt="Ramo 217" onclick="ampliarImagen(this.src)">
       <h3>Ramo 217</h3>
-      <p>Precio: $243000</p>
-      <input type="checkbox" value="Ramo 217|243000|ramo_217.jpeg"> Seleccionar
+      <p>Precio: $ 2.430</p>
+      <input type="checkbox" value="Ramo 217|$ 2.430|ramo_217.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_218.jpeg" alt="Ramo 218">
+      <img src="ramo_218.jpeg" alt="Ramo 218" onclick="ampliarImagen(this.src)">
       <h3>Ramo 218</h3>
-      <p>Precio: $242000</p>
-      <input type="checkbox" value="Ramo 218|242000|ramo_218.jpeg"> Seleccionar
+      <p>Precio: $ 2.420</p>
+      <input type="checkbox" value="Ramo 218|$ 2.420|ramo_218.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_219.jpeg" alt="Ramo 219">
+      <img src="ramo_219.jpeg" alt="Ramo 219" onclick="ampliarImagen(this.src)">
       <h3>Ramo 219</h3>
-      <p>Precio: $241000</p>
-      <input type="checkbox" value="Ramo 219|241000|ramo_219.jpeg"> Seleccionar
+      <p>Precio: $ 2.410</p>
+      <input type="checkbox" value="Ramo 219|$ 2.410|ramo_219.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_220.jpeg" alt="Ramo 220">
+      <img src="ramo_220.jpeg" alt="Ramo 220" onclick="ampliarImagen(this.src)">
       <h3>Ramo 220</h3>
-      <p>Precio: $240000</p>
-      <input type="checkbox" value="Ramo 220|240000|ramo_220.jpeg"> Seleccionar
+      <p>Precio: $ 2.400</p>
+      <input type="checkbox" value="Ramo 220|$ 2.400|ramo_220.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_221.jpeg" alt="Ramo 221">
+      <img src="ramo_221.jpeg" alt="Ramo 221" onclick="ampliarImagen(this.src)">
       <h3>Ramo 221</h3>
-      <p>Precio: $239000</p>
-      <input type="checkbox" value="Ramo 221|239000|ramo_221.jpeg"> Seleccionar
+      <p>Precio: $ 2.390</p>
+      <input type="checkbox" value="Ramo 221|$ 2.390|ramo_221.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_222.jpeg" alt="Ramo 222">
+      <img src="ramo_222.jpeg" alt="Ramo 222" onclick="ampliarImagen(this.src)">
       <h3>Ramo 222</h3>
-      <p>Precio: $238000</p>
-      <input type="checkbox" value="Ramo 222|238000|ramo_222.jpeg"> Seleccionar
+      <p>Precio: $ 2.380</p>
+      <input type="checkbox" value="Ramo 222|$ 2.380|ramo_222.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_223.jpeg" alt="Ramo 223">
+      <img src="ramo_223.jpeg" alt="Ramo 223" onclick="ampliarImagen(this.src)">
       <h3>Ramo 223</h3>
-      <p>Precio: $237000</p>
-      <input type="checkbox" value="Ramo 223|237000|ramo_223.jpeg"> Seleccionar
+      <p>Precio: $ 2.370</p>
+      <input type="checkbox" value="Ramo 223|$ 2.370|ramo_223.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_224.jpeg" alt="Ramo 224">
+      <img src="ramo_224.jpeg" alt="Ramo 224" onclick="ampliarImagen(this.src)">
       <h3>Ramo 224</h3>
-      <p>Precio: $236000</p>
-      <input type="checkbox" value="Ramo 224|236000|ramo_224.jpeg"> Seleccionar
+      <p>Precio: $ 2.360</p>
+      <input type="checkbox" value="Ramo 224|$ 2.360|ramo_224.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_225.jpeg" alt="Ramo 225">
+      <img src="ramo_225.jpeg" alt="Ramo 225" onclick="ampliarImagen(this.src)">
       <h3>Ramo 225</h3>
-      <p>Precio: $235000</p>
-      <input type="checkbox" value="Ramo 225|235000|ramo_225.jpeg"> Seleccionar
+      <p>Precio: $ 2.350</p>
+      <input type="checkbox" value="Ramo 225|$ 2.350|ramo_225.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_226.jpeg" alt="Ramo 226">
+      <img src="ramo_226.jpeg" alt="Ramo 226" onclick="ampliarImagen(this.src)">
       <h3>Ramo 226</h3>
-      <p>Precio: $234000</p>
-      <input type="checkbox" value="Ramo 226|234000|ramo_226.jpeg"> Seleccionar
+      <p>Precio: $ 2.340</p>
+      <input type="checkbox" value="Ramo 226|$ 2.340|ramo_226.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_227.jpeg" alt="Ramo 227">
+      <img src="ramo_227.jpeg" alt="Ramo 227" onclick="ampliarImagen(this.src)">
       <h3>Ramo 227</h3>
-      <p>Precio: $233000</p>
-      <input type="checkbox" value="Ramo 227|233000|ramo_227.jpeg"> Seleccionar
+      <p>Precio: $ 2.330</p>
+      <input type="checkbox" value="Ramo 227|$ 2.330|ramo_227.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_228.jpeg" alt="Ramo 228">
+      <img src="ramo_228.jpeg" alt="Ramo 228" onclick="ampliarImagen(this.src)">
       <h3>Ramo 228</h3>
-      <p>Precio: $232000</p>
-      <input type="checkbox" value="Ramo 228|232000|ramo_228.jpeg"> Seleccionar
+      <p>Precio: $ 2.320</p>
+      <input type="checkbox" value="Ramo 228|$ 2.320|ramo_228.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_229.jpeg" alt="Ramo 229">
+      <img src="ramo_229.jpeg" alt="Ramo 229" onclick="ampliarImagen(this.src)">
       <h3>Ramo 229</h3>
-      <p>Precio: $231000</p>
-      <input type="checkbox" value="Ramo 229|231000|ramo_229.jpeg"> Seleccionar
+      <p>Precio: $ 2.310</p>
+      <input type="checkbox" value="Ramo 229|$ 2.310|ramo_229.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_230.jpeg" alt="Ramo 230">
+      <img src="ramo_230.jpeg" alt="Ramo 230" onclick="ampliarImagen(this.src)">
       <h3>Ramo 230</h3>
-      <p>Precio: $230000</p>
-      <input type="checkbox" value="Ramo 230|230000|ramo_230.jpeg"> Seleccionar
+      <p>Precio: $ 2.300</p>
+      <input type="checkbox" value="Ramo 230|$ 2.300|ramo_230.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_231.jpeg" alt="Ramo 231">
+      <img src="ramo_231.jpeg" alt="Ramo 231" onclick="ampliarImagen(this.src)">
       <h3>Ramo 231</h3>
-      <p>Precio: $229000</p>
-      <input type="checkbox" value="Ramo 231|229000|ramo_231.jpeg"> Seleccionar
+      <p>Precio: $ 2.290</p>
+      <input type="checkbox" value="Ramo 231|$ 2.290|ramo_231.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_232.jpeg" alt="Ramo 232">
+      <img src="ramo_232.jpeg" alt="Ramo 232" onclick="ampliarImagen(this.src)">
       <h3>Ramo 232</h3>
-      <p>Precio: $228000</p>
-      <input type="checkbox" value="Ramo 232|228000|ramo_232.jpeg"> Seleccionar
+      <p>Precio: $ 2.280</p>
+      <input type="checkbox" value="Ramo 232|$ 2.280|ramo_232.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_233.jpeg" alt="Ramo 233">
+      <img src="ramo_233.jpeg" alt="Ramo 233" onclick="ampliarImagen(this.src)">
       <h3>Ramo 233</h3>
-      <p>Precio: $227000</p>
-      <input type="checkbox" value="Ramo 233|227000|ramo_233.jpeg"> Seleccionar
+      <p>Precio: $ 2.270</p>
+      <input type="checkbox" value="Ramo 233|$ 2.270|ramo_233.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_234.jpeg" alt="Ramo 234">
+      <img src="ramo_234.jpeg" alt="Ramo 234" onclick="ampliarImagen(this.src)">
       <h3>Ramo 234</h3>
-      <p>Precio: $226000</p>
-      <input type="checkbox" value="Ramo 234|226000|ramo_234.jpeg"> Seleccionar
+      <p>Precio: $ 2.260</p>
+      <input type="checkbox" value="Ramo 234|$ 2.260|ramo_234.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_235.jpeg" alt="Ramo 235">
+      <img src="ramo_235.jpeg" alt="Ramo 235" onclick="ampliarImagen(this.src)">
       <h3>Ramo 235</h3>
-      <p>Precio: $225000</p>
-      <input type="checkbox" value="Ramo 235|225000|ramo_235.jpeg"> Seleccionar
+      <p>Precio: $ 2.250</p>
+      <input type="checkbox" value="Ramo 235|$ 2.250|ramo_235.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_236.jpeg" alt="Ramo 236">
+      <img src="ramo_236.jpeg" alt="Ramo 236" onclick="ampliarImagen(this.src)">
       <h3>Ramo 236</h3>
-      <p>Precio: $224000</p>
-      <input type="checkbox" value="Ramo 236|224000|ramo_236.jpeg"> Seleccionar
+      <p>Precio: $ 2.240</p>
+      <input type="checkbox" value="Ramo 236|$ 2.240|ramo_236.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_237.jpeg" alt="Ramo 237">
+      <img src="ramo_237.jpeg" alt="Ramo 237" onclick="ampliarImagen(this.src)">
       <h3>Ramo 237</h3>
-      <p>Precio: $223000</p>
-      <input type="checkbox" value="Ramo 237|223000|ramo_237.jpeg"> Seleccionar
+      <p>Precio: $ 2.230</p>
+      <input type="checkbox" value="Ramo 237|$ 2.230|ramo_237.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_238.jpeg" alt="Ramo 238">
+      <img src="ramo_238.jpeg" alt="Ramo 238" onclick="ampliarImagen(this.src)">
       <h3>Ramo 238</h3>
-      <p>Precio: $222000</p>
-      <input type="checkbox" value="Ramo 238|222000|ramo_238.jpeg"> Seleccionar
+      <p>Precio: $ 2.220</p>
+      <input type="checkbox" value="Ramo 238|$ 2.220|ramo_238.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_239.jpeg" alt="Ramo 239">
+      <img src="ramo_239.jpeg" alt="Ramo 239" onclick="ampliarImagen(this.src)">
       <h3>Ramo 239</h3>
-      <p>Precio: $221000</p>
-      <input type="checkbox" value="Ramo 239|221000|ramo_239.jpeg"> Seleccionar
+      <p>Precio: $ 2.210</p>
+      <input type="checkbox" value="Ramo 239|$ 2.210|ramo_239.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_240.jpeg" alt="Ramo 240">
+      <img src="ramo_240.jpeg" alt="Ramo 240" onclick="ampliarImagen(this.src)">
       <h3>Ramo 240</h3>
-      <p>Precio: $220000</p>
-      <input type="checkbox" value="Ramo 240|220000|ramo_240.jpeg"> Seleccionar
+      <p>Precio: $ 2.200</p>
+      <input type="checkbox" value="Ramo 240|$ 2.200|ramo_240.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_241.jpeg" alt="Ramo 241">
+      <img src="ramo_241.jpeg" alt="Ramo 241" onclick="ampliarImagen(this.src)">
       <h3>Ramo 241</h3>
-      <p>Precio: $219000</p>
-      <input type="checkbox" value="Ramo 241|219000|ramo_241.jpeg"> Seleccionar
+      <p>Precio: $ 2.190</p>
+      <input type="checkbox" value="Ramo 241|$ 2.190|ramo_241.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_242.jpeg" alt="Ramo 242">
+      <img src="ramo_242.jpeg" alt="Ramo 242" onclick="ampliarImagen(this.src)">
       <h3>Ramo 242</h3>
-      <p>Precio: $218000</p>
-      <input type="checkbox" value="Ramo 242|218000|ramo_242.jpeg"> Seleccionar
+      <p>Precio: $ 2.180</p>
+      <input type="checkbox" value="Ramo 242|$ 2.180|ramo_242.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_243.jpeg" alt="Ramo 243">
+      <img src="ramo_243.jpeg" alt="Ramo 243" onclick="ampliarImagen(this.src)">
       <h3>Ramo 243</h3>
-      <p>Precio: $217000</p>
-      <input type="checkbox" value="Ramo 243|217000|ramo_243.jpeg"> Seleccionar
+      <p>Precio: $ 2.170</p>
+      <input type="checkbox" value="Ramo 243|$ 2.170|ramo_243.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_244.jpeg" alt="Ramo 244">
+      <img src="ramo_244.jpeg" alt="Ramo 244" onclick="ampliarImagen(this.src)">
       <h3>Ramo 244</h3>
-      <p>Precio: $216000</p>
-      <input type="checkbox" value="Ramo 244|216000|ramo_244.jpeg"> Seleccionar
+      <p>Precio: $ 2.160</p>
+      <input type="checkbox" value="Ramo 244|$ 2.160|ramo_244.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_245.jpeg" alt="Ramo 245">
+      <img src="ramo_245.jpeg" alt="Ramo 245" onclick="ampliarImagen(this.src)">
       <h3>Ramo 245</h3>
-      <p>Precio: $215000</p>
-      <input type="checkbox" value="Ramo 245|215000|ramo_245.jpeg"> Seleccionar
+      <p>Precio: $ 2.150</p>
+      <input type="checkbox" value="Ramo 245|$ 2.150|ramo_245.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_246.jpeg" alt="Ramo 246">
+      <img src="ramo_246.jpeg" alt="Ramo 246" onclick="ampliarImagen(this.src)">
       <h3>Ramo 246</h3>
-      <p>Precio: $214000</p>
-      <input type="checkbox" value="Ramo 246|214000|ramo_246.jpeg"> Seleccionar
+      <p>Precio: $ 2.140</p>
+      <input type="checkbox" value="Ramo 246|$ 2.140|ramo_246.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_247.jpeg" alt="Ramo 247">
+      <img src="ramo_247.jpeg" alt="Ramo 247" onclick="ampliarImagen(this.src)">
       <h3>Ramo 247</h3>
-      <p>Precio: $213000</p>
-      <input type="checkbox" value="Ramo 247|213000|ramo_247.jpeg"> Seleccionar
+      <p>Precio: $ 2.130</p>
+      <input type="checkbox" value="Ramo 247|$ 2.130|ramo_247.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_248.jpeg" alt="Ramo 248">
+      <img src="ramo_248.jpeg" alt="Ramo 248" onclick="ampliarImagen(this.src)">
       <h3>Ramo 248</h3>
-      <p>Precio: $212000</p>
-      <input type="checkbox" value="Ramo 248|212000|ramo_248.jpeg"> Seleccionar
+      <p>Precio: $ 2.120</p>
+      <input type="checkbox" value="Ramo 248|$ 2.120|ramo_248.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_249.jpeg" alt="Ramo 249">
+      <img src="ramo_249.jpeg" alt="Ramo 249" onclick="ampliarImagen(this.src)">
       <h3>Ramo 249</h3>
-      <p>Precio: $211000</p>
-      <input type="checkbox" value="Ramo 249|211000|ramo_249.jpeg"> Seleccionar
+      <p>Precio: $ 2.110</p>
+      <input type="checkbox" value="Ramo 249|$ 2.110|ramo_249.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_250.jpeg" alt="Ramo 250">
+      <img src="ramo_250.jpeg" alt="Ramo 250" onclick="ampliarImagen(this.src)">
       <h3>Ramo 250</h3>
-      <p>Precio: $210000</p>
-      <input type="checkbox" value="Ramo 250|210000|ramo_250.jpeg"> Seleccionar
+      <p>Precio: $ 2.100</p>
+      <input type="checkbox" value="Ramo 250|$ 2.100|ramo_250.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_251.jpeg" alt="Ramo 251">
+      <img src="ramo_251.jpeg" alt="Ramo 251" onclick="ampliarImagen(this.src)">
       <h3>Ramo 251</h3>
-      <p>Precio: $209000</p>
-      <input type="checkbox" value="Ramo 251|209000|ramo_251.jpeg"> Seleccionar
+      <p>Precio: $ 2.090</p>
+      <input type="checkbox" value="Ramo 251|$ 2.090|ramo_251.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_252.jpeg" alt="Ramo 252">
+      <img src="ramo_252.jpeg" alt="Ramo 252" onclick="ampliarImagen(this.src)">
       <h3>Ramo 252</h3>
-      <p>Precio: $208000</p>
-      <input type="checkbox" value="Ramo 252|208000|ramo_252.jpeg"> Seleccionar
+      <p>Precio: $ 2.080</p>
+      <input type="checkbox" value="Ramo 252|$ 2.080|ramo_252.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_253.jpeg" alt="Ramo 253">
+      <img src="ramo_253.jpeg" alt="Ramo 253" onclick="ampliarImagen(this.src)">
       <h3>Ramo 253</h3>
-      <p>Precio: $207000</p>
-      <input type="checkbox" value="Ramo 253|207000|ramo_253.jpeg"> Seleccionar
+      <p>Precio: $ 2.070</p>
+      <input type="checkbox" value="Ramo 253|$ 2.070|ramo_253.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_254.jpeg" alt="Ramo 254">
+      <img src="ramo_254.jpeg" alt="Ramo 254" onclick="ampliarImagen(this.src)">
       <h3>Ramo 254</h3>
-      <p>Precio: $206000</p>
-      <input type="checkbox" value="Ramo 254|206000|ramo_254.jpeg"> Seleccionar
+      <p>Precio: $ 2.060</p>
+      <input type="checkbox" value="Ramo 254|$ 2.060|ramo_254.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_255.jpeg" alt="Ramo 255">
+      <img src="ramo_255.jpeg" alt="Ramo 255" onclick="ampliarImagen(this.src)">
       <h3>Ramo 255</h3>
-      <p>Precio: $205000</p>
-      <input type="checkbox" value="Ramo 255|205000|ramo_255.jpeg"> Seleccionar
+      <p>Precio: $ 2.050</p>
+      <input type="checkbox" value="Ramo 255|$ 2.050|ramo_255.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_256.jpeg" alt="Ramo 256">
+      <img src="ramo_256.jpeg" alt="Ramo 256" onclick="ampliarImagen(this.src)">
       <h3>Ramo 256</h3>
-      <p>Precio: $204000</p>
-      <input type="checkbox" value="Ramo 256|204000|ramo_256.jpeg"> Seleccionar
+      <p>Precio: $ 2.040</p>
+      <input type="checkbox" value="Ramo 256|$ 2.040|ramo_256.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_257.jpeg" alt="Ramo 257">
+      <img src="ramo_257.jpeg" alt="Ramo 257" onclick="ampliarImagen(this.src)">
       <h3>Ramo 257</h3>
-      <p>Precio: $203000</p>
-      <input type="checkbox" value="Ramo 257|203000|ramo_257.jpeg"> Seleccionar
+      <p>Precio: $ 2.030</p>
+      <input type="checkbox" value="Ramo 257|$ 2.030|ramo_257.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_258.jpeg" alt="Ramo 258">
+      <img src="ramo_258.jpeg" alt="Ramo 258" onclick="ampliarImagen(this.src)">
       <h3>Ramo 258</h3>
-      <p>Precio: $202000</p>
-      <input type="checkbox" value="Ramo 258|202000|ramo_258.jpeg"> Seleccionar
+      <p>Precio: $ 2.020</p>
+      <input type="checkbox" value="Ramo 258|$ 2.020|ramo_258.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_259.jpeg" alt="Ramo 259">
+      <img src="ramo_259.jpeg" alt="Ramo 259" onclick="ampliarImagen(this.src)">
       <h3>Ramo 259</h3>
-      <p>Precio: $201000</p>
-      <input type="checkbox" value="Ramo 259|201000|ramo_259.jpeg"> Seleccionar
+      <p>Precio: $ 2.010</p>
+      <input type="checkbox" value="Ramo 259|$ 2.010|ramo_259.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_260.jpeg" alt="Ramo 260">
+      <img src="ramo_260.jpeg" alt="Ramo 260" onclick="ampliarImagen(this.src)">
       <h3>Ramo 260</h3>
-      <p>Precio: $200000</p>
-      <input type="checkbox" value="Ramo 260|200000|ramo_260.jpeg"> Seleccionar
+      <p>Precio: $ 2.000</p>
+      <input type="checkbox" value="Ramo 260|$ 2.000|ramo_260.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_261.jpeg" alt="Ramo 261">
+      <img src="ramo_261.jpeg" alt="Ramo 261" onclick="ampliarImagen(this.src)">
       <h3>Ramo 261</h3>
-      <p>Precio: $199000</p>
-      <input type="checkbox" value="Ramo 261|199000|ramo_261.jpeg"> Seleccionar
+      <p>Precio: $ 1.990</p>
+      <input type="checkbox" value="Ramo 261|$ 1.990|ramo_261.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_262.jpeg" alt="Ramo 262">
+      <img src="ramo_262.jpeg" alt="Ramo 262" onclick="ampliarImagen(this.src)">
       <h3>Ramo 262</h3>
-      <p>Precio: $198000</p>
-      <input type="checkbox" value="Ramo 262|198000|ramo_262.jpeg"> Seleccionar
+      <p>Precio: $ 1.980</p>
+      <input type="checkbox" value="Ramo 262|$ 1.980|ramo_262.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_263.jpeg" alt="Ramo 263">
+      <img src="ramo_263.jpeg" alt="Ramo 263" onclick="ampliarImagen(this.src)">
       <h3>Ramo 263</h3>
-      <p>Precio: $197000</p>
-      <input type="checkbox" value="Ramo 263|197000|ramo_263.jpeg"> Seleccionar
+      <p>Precio: $ 1.970</p>
+      <input type="checkbox" value="Ramo 263|$ 1.970|ramo_263.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_264.jpeg" alt="Ramo 264">
+      <img src="ramo_264.jpeg" alt="Ramo 264" onclick="ampliarImagen(this.src)">
       <h3>Ramo 264</h3>
-      <p>Precio: $196000</p>
-      <input type="checkbox" value="Ramo 264|196000|ramo_264.jpeg"> Seleccionar
+      <p>Precio: $ 1.960</p>
+      <input type="checkbox" value="Ramo 264|$ 1.960|ramo_264.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_265.jpeg" alt="Ramo 265">
+      <img src="ramo_265.jpeg" alt="Ramo 265" onclick="ampliarImagen(this.src)">
       <h3>Ramo 265</h3>
-      <p>Precio: $195000</p>
-      <input type="checkbox" value="Ramo 265|195000|ramo_265.jpeg"> Seleccionar
+      <p>Precio: $ 1.950</p>
+      <input type="checkbox" value="Ramo 265|$ 1.950|ramo_265.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_266.jpeg" alt="Ramo 266">
+      <img src="ramo_266.jpeg" alt="Ramo 266" onclick="ampliarImagen(this.src)">
       <h3>Ramo 266</h3>
-      <p>Precio: $194000</p>
-      <input type="checkbox" value="Ramo 266|194000|ramo_266.jpeg"> Seleccionar
+      <p>Precio: $ 1.940</p>
+      <input type="checkbox" value="Ramo 266|$ 1.940|ramo_266.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_267.jpeg" alt="Ramo 267">
+      <img src="ramo_267.jpeg" alt="Ramo 267" onclick="ampliarImagen(this.src)">
       <h3>Ramo 267</h3>
-      <p>Precio: $193000</p>
-      <input type="checkbox" value="Ramo 267|193000|ramo_267.jpeg"> Seleccionar
+      <p>Precio: $ 1.930</p>
+      <input type="checkbox" value="Ramo 267|$ 1.930|ramo_267.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_268.jpeg" alt="Ramo 268">
+      <img src="ramo_268.jpeg" alt="Ramo 268" onclick="ampliarImagen(this.src)">
       <h3>Ramo 268</h3>
-      <p>Precio: $192000</p>
-      <input type="checkbox" value="Ramo 268|192000|ramo_268.jpeg"> Seleccionar
+      <p>Precio: $ 1.920</p>
+      <input type="checkbox" value="Ramo 268|$ 1.920|ramo_268.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_269.jpeg" alt="Ramo 269">
+      <img src="ramo_269.jpeg" alt="Ramo 269" onclick="ampliarImagen(this.src)">
       <h3>Ramo 269</h3>
-      <p>Precio: $191000</p>
-      <input type="checkbox" value="Ramo 269|191000|ramo_269.jpeg"> Seleccionar
+      <p>Precio: $ 1.910</p>
+      <input type="checkbox" value="Ramo 269|$ 1.910|ramo_269.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_270.jpeg" alt="Ramo 270">
+      <img src="ramo_270.jpeg" alt="Ramo 270" onclick="ampliarImagen(this.src)">
       <h3>Ramo 270</h3>
-      <p>Precio: $190000</p>
-      <input type="checkbox" value="Ramo 270|190000|ramo_270.jpeg"> Seleccionar
+      <p>Precio: $ 1.900</p>
+      <input type="checkbox" value="Ramo 270|$ 1.900|ramo_270.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_271.jpeg" alt="Ramo 271">
+      <img src="ramo_271.jpeg" alt="Ramo 271" onclick="ampliarImagen(this.src)">
       <h3>Ramo 271</h3>
-      <p>Precio: $189000</p>
-      <input type="checkbox" value="Ramo 271|189000|ramo_271.jpeg"> Seleccionar
+      <p>Precio: $ 1.890</p>
+      <input type="checkbox" value="Ramo 271|$ 1.890|ramo_271.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_272.jpeg" alt="Ramo 272">
+      <img src="ramo_272.jpeg" alt="Ramo 272" onclick="ampliarImagen(this.src)">
       <h3>Ramo 272</h3>
-      <p>Precio: $188000</p>
-      <input type="checkbox" value="Ramo 272|188000|ramo_272.jpeg"> Seleccionar
+      <p>Precio: $ 1.880</p>
+      <input type="checkbox" value="Ramo 272|$ 1.880|ramo_272.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_273.jpeg" alt="Ramo 273">
+      <img src="ramo_273.jpeg" alt="Ramo 273" onclick="ampliarImagen(this.src)">
       <h3>Ramo 273</h3>
-      <p>Precio: $187000</p>
-      <input type="checkbox" value="Ramo 273|187000|ramo_273.jpeg"> Seleccionar
+      <p>Precio: $ 1.870</p>
+      <input type="checkbox" value="Ramo 273|$ 1.870|ramo_273.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_274.jpeg" alt="Ramo 274">
+      <img src="ramo_274.jpeg" alt="Ramo 274" onclick="ampliarImagen(this.src)">
       <h3>Ramo 274</h3>
-      <p>Precio: $186000</p>
-      <input type="checkbox" value="Ramo 274|186000|ramo_274.jpeg"> Seleccionar
+      <p>Precio: $ 1.860</p>
+      <input type="checkbox" value="Ramo 274|$ 1.860|ramo_274.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_275.jpeg" alt="Ramo 275">
+      <img src="ramo_275.jpeg" alt="Ramo 275" onclick="ampliarImagen(this.src)">
       <h3>Ramo 275</h3>
-      <p>Precio: $185000</p>
-      <input type="checkbox" value="Ramo 275|185000|ramo_275.jpeg"> Seleccionar
+      <p>Precio: $ 1.850</p>
+      <input type="checkbox" value="Ramo 275|$ 1.850|ramo_275.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_276.jpeg" alt="Ramo 276">
+      <img src="ramo_276.jpeg" alt="Ramo 276" onclick="ampliarImagen(this.src)">
       <h3>Ramo 276</h3>
-      <p>Precio: $184000</p>
-      <input type="checkbox" value="Ramo 276|184000|ramo_276.jpeg"> Seleccionar
+      <p>Precio: $ 1.840</p>
+      <input type="checkbox" value="Ramo 276|$ 1.840|ramo_276.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_277.jpeg" alt="Ramo 277">
+      <img src="ramo_277.jpeg" alt="Ramo 277" onclick="ampliarImagen(this.src)">
       <h3>Ramo 277</h3>
-      <p>Precio: $183000</p>
-      <input type="checkbox" value="Ramo 277|183000|ramo_277.jpeg"> Seleccionar
+      <p>Precio: $ 1.830</p>
+      <input type="checkbox" value="Ramo 277|$ 1.830|ramo_277.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_278.jpeg" alt="Ramo 278">
+      <img src="ramo_278.jpeg" alt="Ramo 278" onclick="ampliarImagen(this.src)">
       <h3>Ramo 278</h3>
-      <p>Precio: $182000</p>
-      <input type="checkbox" value="Ramo 278|182000|ramo_278.jpeg"> Seleccionar
+      <p>Precio: $ 1.820</p>
+      <input type="checkbox" value="Ramo 278|$ 1.820|ramo_278.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_279.jpeg" alt="Ramo 279">
+      <img src="ramo_279.jpeg" alt="Ramo 279" onclick="ampliarImagen(this.src)">
       <h3>Ramo 279</h3>
-      <p>Precio: $181000</p>
-      <input type="checkbox" value="Ramo 279|181000|ramo_279.jpeg"> Seleccionar
+      <p>Precio: $ 1.810</p>
+      <input type="checkbox" value="Ramo 279|$ 1.810|ramo_279.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_280.jpeg" alt="Ramo 280">
+      <img src="ramo_280.jpeg" alt="Ramo 280" onclick="ampliarImagen(this.src)">
       <h3>Ramo 280</h3>
-      <p>Precio: $180000</p>
-      <input type="checkbox" value="Ramo 280|180000|ramo_280.jpeg"> Seleccionar
+      <p>Precio: $ 1.800</p>
+      <input type="checkbox" value="Ramo 280|$ 1.800|ramo_280.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_281.jpeg" alt="Ramo 281">
+      <img src="ramo_281.jpeg" alt="Ramo 281" onclick="ampliarImagen(this.src)">
       <h3>Ramo 281</h3>
-      <p>Precio: $179000</p>
-      <input type="checkbox" value="Ramo 281|179000|ramo_281.jpeg"> Seleccionar
+      <p>Precio: $ 1.790</p>
+      <input type="checkbox" value="Ramo 281|$ 1.790|ramo_281.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_282.jpeg" alt="Ramo 282">
+      <img src="ramo_282.jpeg" alt="Ramo 282" onclick="ampliarImagen(this.src)">
       <h3>Ramo 282</h3>
-      <p>Precio: $178000</p>
-      <input type="checkbox" value="Ramo 282|178000|ramo_282.jpeg"> Seleccionar
+      <p>Precio: $ 1.780</p>
+      <input type="checkbox" value="Ramo 282|$ 1.780|ramo_282.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_283.jpeg" alt="Ramo 283">
+      <img src="ramo_283.jpeg" alt="Ramo 283" onclick="ampliarImagen(this.src)">
       <h3>Ramo 283</h3>
-      <p>Precio: $177000</p>
-      <input type="checkbox" value="Ramo 283|177000|ramo_283.jpeg"> Seleccionar
+      <p>Precio: $ 1.770</p>
+      <input type="checkbox" value="Ramo 283|$ 1.770|ramo_283.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_284.jpeg" alt="Ramo 284">
+      <img src="ramo_284.jpeg" alt="Ramo 284" onclick="ampliarImagen(this.src)">
       <h3>Ramo 284</h3>
-      <p>Precio: $176000</p>
-      <input type="checkbox" value="Ramo 284|176000|ramo_284.jpeg"> Seleccionar
+      <p>Precio: $ 1.760</p>
+      <input type="checkbox" value="Ramo 284|$ 1.760|ramo_284.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_285.jpeg" alt="Ramo 285">
+      <img src="ramo_285.jpeg" alt="Ramo 285" onclick="ampliarImagen(this.src)">
       <h3>Ramo 285</h3>
-      <p>Precio: $175000</p>
-      <input type="checkbox" value="Ramo 285|175000|ramo_285.jpeg"> Seleccionar
+      <p>Precio: $ 1.750</p>
+      <input type="checkbox" value="Ramo 285|$ 1.750|ramo_285.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_286.jpeg" alt="Ramo 286">
+      <img src="ramo_286.jpeg" alt="Ramo 286" onclick="ampliarImagen(this.src)">
       <h3>Ramo 286</h3>
-      <p>Precio: $174000</p>
-      <input type="checkbox" value="Ramo 286|174000|ramo_286.jpeg"> Seleccionar
+      <p>Precio: $ 1.740</p>
+      <input type="checkbox" value="Ramo 286|$ 1.740|ramo_286.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_287.jpeg" alt="Ramo 287">
+      <img src="ramo_287.jpeg" alt="Ramo 287" onclick="ampliarImagen(this.src)">
       <h3>Ramo 287</h3>
-      <p>Precio: $173000</p>
-      <input type="checkbox" value="Ramo 287|173000|ramo_287.jpeg"> Seleccionar
+      <p>Precio: $ 1.730</p>
+      <input type="checkbox" value="Ramo 287|$ 1.730|ramo_287.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_288.jpeg" alt="Ramo 288">
+      <img src="ramo_288.jpeg" alt="Ramo 288" onclick="ampliarImagen(this.src)">
       <h3>Ramo 288</h3>
-      <p>Precio: $172000</p>
-      <input type="checkbox" value="Ramo 288|172000|ramo_288.jpeg"> Seleccionar
+      <p>Precio: $ 1.720</p>
+      <input type="checkbox" value="Ramo 288|$ 1.720|ramo_288.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_289.jpeg" alt="Ramo 289">
+      <img src="ramo_289.jpeg" alt="Ramo 289" onclick="ampliarImagen(this.src)">
       <h3>Ramo 289</h3>
-      <p>Precio: $171000</p>
-      <input type="checkbox" value="Ramo 289|171000|ramo_289.jpeg"> Seleccionar
+      <p>Precio: $ 1.710</p>
+      <input type="checkbox" value="Ramo 289|$ 1.710|ramo_289.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_290.jpeg" alt="Ramo 290">
+      <img src="ramo_290.jpeg" alt="Ramo 290" onclick="ampliarImagen(this.src)">
       <h3>Ramo 290</h3>
-      <p>Precio: $170000</p>
-      <input type="checkbox" value="Ramo 290|170000|ramo_290.jpeg"> Seleccionar
+      <p>Precio: $ 1.700</p>
+      <input type="checkbox" value="Ramo 290|$ 1.700|ramo_290.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_291.jpeg" alt="Ramo 291">
+      <img src="ramo_291.jpeg" alt="Ramo 291" onclick="ampliarImagen(this.src)">
       <h3>Ramo 291</h3>
-      <p>Precio: $169000</p>
-      <input type="checkbox" value="Ramo 291|169000|ramo_291.jpeg"> Seleccionar
+      <p>Precio: $ 1.690</p>
+      <input type="checkbox" value="Ramo 291|$ 1.690|ramo_291.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_292.jpeg" alt="Ramo 292">
+      <img src="ramo_292.jpeg" alt="Ramo 292" onclick="ampliarImagen(this.src)">
       <h3>Ramo 292</h3>
-      <p>Precio: $168000</p>
-      <input type="checkbox" value="Ramo 292|168000|ramo_292.jpeg"> Seleccionar
+      <p>Precio: $ 1.680</p>
+      <input type="checkbox" value="Ramo 292|$ 1.680|ramo_292.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_293.jpeg" alt="Ramo 293">
+      <img src="ramo_293.jpeg" alt="Ramo 293" onclick="ampliarImagen(this.src)">
       <h3>Ramo 293</h3>
-      <p>Precio: $167000</p>
-      <input type="checkbox" value="Ramo 293|167000|ramo_293.jpeg"> Seleccionar
+      <p>Precio: $ 1.670</p>
+      <input type="checkbox" value="Ramo 293|$ 1.670|ramo_293.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_294.jpeg" alt="Ramo 294">
+      <img src="ramo_294.jpeg" alt="Ramo 294" onclick="ampliarImagen(this.src)">
       <h3>Ramo 294</h3>
-      <p>Precio: $166000</p>
-      <input type="checkbox" value="Ramo 294|166000|ramo_294.jpeg"> Seleccionar
+      <p>Precio: $ 1.660</p>
+      <input type="checkbox" value="Ramo 294|$ 1.660|ramo_294.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_295.jpeg" alt="Ramo 295">
+      <img src="ramo_295.jpeg" alt="Ramo 295" onclick="ampliarImagen(this.src)">
       <h3>Ramo 295</h3>
-      <p>Precio: $165000</p>
-      <input type="checkbox" value="Ramo 295|165000|ramo_295.jpeg"> Seleccionar
+      <p>Precio: $ 1.650</p>
+      <input type="checkbox" value="Ramo 295|$ 1.650|ramo_295.jpeg"> Seleccionar
     </div>
     
     <div class="producto">
-      <img src="ramo_296.jpeg" alt="Ramo 296">
+      <img src="ramo_296.jpeg" alt="Ramo 296" onclick="ampliarImagen(this.src)">
       <h3>Ramo 296</h3>
-      <p>Precio: $164000</p>
-      <input type="checkbox" value="Ramo 296|164000|ramo_296.jpeg"> Seleccionar
+      <p>Precio: $ 1.640</p>
+      <input type="checkbox" value="Ramo 296|$ 1.640|ramo_296.jpeg"> Seleccionar
     </div>
     
 </main>
+
+<div id="modal" class="modal" onclick="cerrarModal()">
+  <img id="imagenModal" src="">
+</div>
+
 <button class="btn-enviar" onclick="enviarWhatsApp()">Enviar selección por WhatsApp</button>
+
 <script>
   function enviarWhatsApp() {
     const checks = document.querySelectorAll('input[type=checkbox]:checked');
@@ -2125,12 +2148,24 @@
     checks.forEach(chk => {
       let [nombre, precio, imagen] = chk.value.split("|");
       const url = window.location.href.replace(/\/[^\/]*$/, '/') + imagen;
-      mensaje += `🧾 ${nombre} - $${precio}%0A📸 ${url}%0A%0A`;
+      mensaje += `🧾 ${nombre} - ${precio}%0A📸 ${url}%0A%0A`;
     });
     const numero = "573208533423";
     const url = `https://wa.me/${numero}?text=${mensaje}`;
     window.open(url, "_blank");
   }
+
+  function ampliarImagen(src) {
+    const modal = document.getElementById("modal");
+    const modalImg = document.getElementById("imagenModal");
+    modal.style.display = "flex";
+    modalImg.src = src;
+  }
+
+  function cerrarModal() {
+    document.getElementById("modal").style.display = "none";
+  }
 </script>
+
 </body>
 </html>
